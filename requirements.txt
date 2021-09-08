@@ -1,0 +1,11 @@
+pytest
+gym
+networkx
+termcolor
+IPython
+matplotlib
+Box2D
+jupyterlab
+scipy
+pyglet
+
