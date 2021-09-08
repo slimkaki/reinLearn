@@ -35,7 +35,7 @@ py.exe -m pip install cmake 'gym[atari]' scipy
 
 * Quantas ações o agente que atua no ambiente Taxi-v3 possui? 
 
-* O que a variável reward retornada por env.step(<number>) significa? 
+* O que a variável reward retornada por `env.step(<number>)` significa? 
 
 ## Atividades que devem ser executadas durante a aula
 
