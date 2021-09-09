@@ -397,8 +397,8 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 \begin{algorithmic} 
 	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, $\epsilon$, $\epsilon_{min}$, $\epsilon_{dec}$, episódios)
 	\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
-	\STATE inicializar $s$ a partir de $env$
 	\FOR {todos os episódios}
+	\STATE inicializar $s$ a partir de $env$
 	\REPEAT
 	\STATE $a \leftarrow escolha(s, \epsilon)$
 	\STATE $s', r \leftarrow$ executar a ação $a$ no $env$
@@ -415,10 +415,10 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 	\small
 	\begin{itemize}
 		\item Siga as orientações que estão no arquivo README.md da 
-		pasta \href{https://github.com/fbarth/reinLearn}.
+		pasta https://github.com/fbarth/reinLearn.
 		
-		\item Execute as atividades que estão descritas no arquivo Atividades.md no 
-		mesmo diretório (\href{https://github.com/fbarth/reinLearn/atividades_01.md}). 
+		\item Execute as atividades que estão descritas no arquivo atividades\_01.md no 
+		mesmo diretório (https://github.com/fbarth/reinLearn/atividades\_01.md). 
 	\end{itemize}
 \end{Slide}
 
@@ -446,7 +446,7 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 
 	\newpage
 
-	\item E quando o espaço de estados for muito grande? 
+	\item E quando o espaço de busca for muito grande? 
 	
 	\newpage
 
@@ -456,6 +456,8 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 	\item Ler o capítulo \textit{18. Reinforcement Learning} até a seção 
 	\textit{Implementing Deep Q-Learning} do livro \textbf{Hands-On Machine Learning 
 	with Scikit-Learn, Keras, and TensorFlow, 2nd Edition} do Aurélien Géron.
+
+	\item https://deepmind.com/research/case-studies/alphago-the-story-so-far
 
 \end{itemize}
 \end{Slide}

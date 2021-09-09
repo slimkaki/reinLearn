@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.19)  8 SEP 2021 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.19)  9 SEP 2021 10:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1043,7 +1043,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{30.0}) has bee
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.469 \end{Slide}
+l.471 \end{Slide}
                  ]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
@@ -1060,17 +1060,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{31.0}) has bee
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.480 \end{Slide}
+l.482 \end{Slide}
                  ]
 
 *******************************************************
 ***** !! PRINT THIS DOCUMENT IN LANDSCAPE MODE !! *****
 *******************************************************
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 485.
 (/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 485.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 485.
 Package rerunfilecheck Info: File `reinforcementLearning.out' has not changed.
 (rerunfilecheck)             Checksum: CB8AD3A89FC9D0DBD1368AE1F504371C;1129.
 
@@ -1079,18 +1079,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 13626 strings out of 481239
- 231348 string characters out of 5920377
+ 13627 strings out of 481239
+ 231366 string characters out of 5920377
  501494 words of memory out of 5000000
- 28574 multiletter control sequences out of 15000+600000
+ 28575 multiletter control sequences out of 15000+600000
  540044 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,16n,63p,507b,790s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on /home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf (31 pages, 979370 bytes).
+Output written on /home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf (31 pages, 979308 bytes).
 PDF statistics:
- 363 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
+ 361 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
  72 named destinations out of 1000 (max. 500000)
  181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
