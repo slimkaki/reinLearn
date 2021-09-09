@@ -75,11 +75,11 @@ qlearn = QLearning(env, alpha=0, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsil
 qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.99, epsilon_min=0.05, epsilon_dec=0.999, episodes=100000)
 ````
 
-* O que aconteceu com o gráfico [results/action_taxidriver.jpg](results/action_taxidriver.jpg)? 
+* O que aconteceu com o gráfico [src/results/action_taxidriver.jpg](src/results/action_taxidriver.jpg)? 
 
 ### Trabalhe com o arquivo [FrozenLake_introduction.py](src/FrozenLake_introduction.py)
 
-* Leia a descrição do ambiente em [https://github.com/openai/gym/wiki/FrozenLake-v1](https://github.com/openai/gym/wiki/FrozenLake-v1).
+* Leia a descrição do ambiente em [https://github.com/openai/gym/wiki/FrozenLake-v0](https://github.com/openai/gym/wiki/FrozenLake-v0).
 
 * Veja o que está codificado no arquivo e execute o mesmo.
 
