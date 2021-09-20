@@ -19,7 +19,7 @@
 \title{Aprendizagem por Reforço} 
 \author{Fabrício Barth}
 \institution{}
-\date{Setembro de 2021}
+\date{Outubro de 2021}
 
 \SlideHeader{}
             {Disciplina de Inteligência Artificial}
@@ -67,8 +67,46 @@ Até o momento vimos nesta disciplina:
 
 \end{Slide}
 
+\begin{Slide}{Taxi Driver}
 
-\begin{Slide}{Visão Geral}
+	\begin{center}
+		\includegraphics[width=.6\textwidth]{figuras/taxi_driver.png}
+	\end{center}
+
+	Podemos implementar uma solução para este problema usando o algoritmo $A^{*}$. Neste caso, 
+	\emph{o que é necessário fazer?}
+
+	\newpage
+
+	Definir uma Heurística $H$ que seja admissível e que traga algum valor para o 
+	processo de busca.
+
+\end{Slide}
+
+\begin{Slide}{Ambientes competitivos}
+
+	\begin{center}
+		\includegraphics[width=.6\textwidth]{figuras/chess.jpg}
+	\end{center}
+
+	Podemos implementar uma solução para este tipo de problema usando o algoritmo 
+	\textsc{Min-Max}. Neste caso, \emph{o que é necessário fazer?}
+
+	\newpage
+
+	Definir uma função de utilidade que consegue descrever a utilidade dos estados 
+	possíveis para o meu agente.
+
+
+	\newpage
+
+	E se fosse possível desenvolver um agente autônomo sem ter que codificar nenhum
+	conhecimento sobre a tarefa que ele precisa executar (heurísticas ou funções de utilidade específicas)? 
+
+\end{Slide}
+
+
+\begin{Slide}{Aprendizagem por Reforço: Visão Geral}
 	\small
 	Um agente aprende a resolver uma tarefa através de repetidas interações com o ambiente, por tentativa e erro, recebendo 
 	(esporadicamente) reforços (punições ou recompensas) como retorno.
@@ -77,12 +115,17 @@ Até o momento vimos nesta disciplina:
 \end{center}
 \end{Slide}
 
-\begin{Slide}{Visão Geral}
+\begin{Slide}{Aprendizagem por Reforço: Visão Geral}
 	\begin{itemize}
 	\item Este agente não tem conhecimento algum sobre a tarefa que precisa executar (heurísticas ou funções de utilidade específicas).
 	\item A \textbf{tarefa} deste agente é executar uma \textbf{sequência de ações}, observar as suas \textbf{consequências} e aprender uma \textbf{política de controle}.
 	
 	\end{itemize}
+
+	\newpage
+
+	\emph{O que é uma política de controle?}
+	
 \end{Slide}
 
 
@@ -205,7 +248,7 @@ Até o momento vimos nesta disciplina:
 %		\item $baixo \rightarrow baixo \rightarrow baixo \rightarrow esquerda \rightarrow esquerda \rightarrow esquerda \rightarrow direita$
 %		\item $baixo \rightarrow direita \rightarrow baixo \rightarrow esquerda \rightarrow esquerda \rightarrow baixo $
 %	\end{itemize}
-	\item Como é que o agente pode saber quais são as melhores ações em cada estado? 
+	\item \emph{Como é que o agente pode saber quais são as melhores ações em cada estado?}
 \end{itemize}
 	
 \end{Slide}
@@ -242,8 +285,8 @@ Primeiro episódio ($\gamma = 0.9$):
 \begin{eqnarray}
 Q(s_{1}, baixo) \leftarrow  r + \gamma \max_{a'}{Q(s', a')} \nonumber \\
 Q(s_{1}, baixo) \leftarrow  0 + 0.9 \times \max[0, 0, 0] \nonumber \\
-Q(s_{2}, esquerda) \leftarrow  -1 + 0.9 \times \max[0, 0, 0,0] \nonumber \\
-%Q(s_{n}, esquerda) \leftarrow  1 + 0.9 \times \max[0, 0, 0,0] \nonumber
+Q(s_{2}, direita) \leftarrow  -1 + 0.9 \times \max[0, 0, 0,0] \nonumber \\
+%Q(s_{n}, direita) \leftarrow  1 + 0.9 \times \max[0, 0, 0,0] \nonumber
 \end{eqnarray}
 
 \newpage
@@ -257,7 +300,7 @@ Q-table resultante da execução do $1^{o}$ episódio.
 		\hline
 		$s_{1}$& 0  & 0 & 0 & 0\\ 
 		\hline
-		$s_{2}$& -1 & 0  & 0 & 0\\ 
+		$s_{2}$& 0 & 0  & -1 & 0\\ 
 		\hline
 $s_{3}$& 0 & 0 & 0 & 0\\ 
 \hline
@@ -265,7 +308,7 @@ $s_{4}$& 0 & 0  & 0  &  0\\
 \hline
 		$\cdots$& $\cdots$ & $\cdots$ & $\cdots$ &$\cdots$ \\ 
 		\hline
-		$s_{n}$& 1 & 0  & 0  & 0 \\ 
+		$s_{n}$& 0 & 0  & 1  & 0 \\ 
 		\hline
 	\end{tabular}
 \end{center}
@@ -299,7 +342,7 @@ Q-table resultante da execução do $n$-éssimo episódio.
 		\hline
 		$s_{1}$& 0.02  & 0.03 & 0.0001 & 0.0001\\ 
 		\hline
-		$s_{2}$& 0.03 & -0.003  & 0.05 & 0.001\\ 
+		$s_{2}$& 0.00 & 0.05 & -0.003 & 0.001\\ 
 		\hline
 		$\cdots$& $\cdots$ & $\cdots$ & $\cdots$ &$\cdots$ \\ 
 		\hline
@@ -316,8 +359,10 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 \begin{Slide}{Algoritmo Q-Learning } 
 	\small
 	\begin{algorithmic} 
+		\STATE \emph{\textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)}
 		\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
 		\FOR {todos os episódios}
+		\STATE inicializar $s$ a partir de $env$
 		\REPEAT
 		\STATE escolher uma ação $a$ para um estado $s$
 		\STATE executar a ação $a$
@@ -328,6 +373,43 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 		\ENDFOR
 		\STATE \textbf{return} $Q(s, a)$
 	\end{algorithmic}
+
+\newpage
+
+\begin{algorithmic} 
+	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
+	\STATE \emph{inicializar os valores de $Q(s, a)$ arbitrariamente}
+	\FOR {todos os episódios}
+	\STATE inicializar $s$ a partir de $env$
+	\REPEAT
+	\STATE escolher uma ação $a$ para um estado $s$
+	\STATE executar a ação $a$
+	\STATE observar a recompensa $r$ e o novo estado $s'$ 
+	\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
+	\STATE$s  \leftarrow s'$
+	\UNTIL {$s$ ser um estado final}
+	\ENDFOR
+	\STATE \textbf{return} $Q(s, a)$
+\end{algorithmic}
+
+\newpage
+
+\begin{algorithmic} 
+	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
+	\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
+	\FOR {todos os episódios}
+	\STATE inicializar $s$ a partir de $env$
+	\REPEAT
+	\STATE escolher uma ação $a$ para um estado $s$
+	\STATE executar a ação $a$
+	\STATE observar a recompensa $r$ e o novo estado $s'$ 
+	\STATE \emph{$Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$}
+	\STATE$s  \leftarrow s'$
+	\UNTIL {$s$ ser um estado final}
+	\ENDFOR
+	\STATE \textbf{return} $Q(s, a)$
+\end{algorithmic}
+
 \end{Slide}
 
 \begin{Slide}{Algoritmo Q-Learning: hiperparâmetro $\alpha$}
@@ -335,6 +417,25 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 		\item $\alpha$ é a taxa de aprendizado ($0 < \alpha \leq 1$), quanto maior, 
 		mais valor dá ao novo aprendizado.
 	\end{itemize}
+\end{Slide}
+
+\begin{Slide}{Que ação escolher?} 
+	\small
+	\begin{algorithmic} 
+		\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
+		\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
+		\FOR {todos os episódios}
+		\STATE inicializar $s$ a partir de $env$
+		\REPEAT
+		\STATE \emph{escolher uma ação $a$ para um estado $s$}
+		\STATE executar a ação $a$
+		\STATE observar a recompensa $r$ e o novo estado $s'$ 
+		\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
+		\STATE$s  \leftarrow s'$
+		\UNTIL {$s$ ser um estado final}
+		\ENDFOR
+		\STATE \textbf{return} $Q(s, a)$
+	\end{algorithmic}
 \end{Slide}
 
 \begin{Slide}{\textit{Exploration} vs \textit{Exploitation}}
@@ -395,7 +496,7 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 \begin{Slide}{Algoritmo Q-Learning}
 	\small
 \begin{algorithmic} 
-	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, $\epsilon$, $\epsilon_{min}$, $\epsilon_{dec}$, episódios)
+	\STATE \emph{\textbf{function} Q-Learning(env, $\alpha$, $\gamma$, $\epsilon$, $\epsilon_{min}$, $\epsilon_{dec}$, episódios)}
 	\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
 	\FOR {todos os episódios}
 	\STATE inicializar $s$ a partir de $env$
@@ -446,7 +547,7 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 
 	\newpage
 
-	\item E quando o espaço de busca for muito grande? 
+	\item \emph{E quando o espaço de busca for muito grande?} 
 	
 	\newpage
 
@@ -457,7 +558,7 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 	\textit{Implementing Deep Q-Learning} do livro \textbf{Hands-On Machine Learning 
 	with Scikit-Learn, Keras, and TensorFlow, 2nd Edition} do Aurélien Géron.
 
-	\item https://deepmind.com/research/case-studies/alphago-the-story-so-far
+	\item Referência adicional: https://deepmind.com/research/case-studies/alphago-the-story-so-far
 
 \end{itemize}
 \end{Slide}

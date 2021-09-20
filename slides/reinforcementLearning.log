@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.19)  9 SEP 2021 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.19)  20 SEP 2021 15:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -606,11 +606,11 @@ pdfTeX warning (ext4): destination with the same identifier (name{4.0}) has been
                                                   \fi \fi 
 l.68 \end{Slide}
                 ]
-<figuras/visaoGeral.png, id=112, 986.68625pt x 473.77pt>
-File: figuras/visaoGeral.png Graphic file (type png)
-<use figuras/visaoGeral.png>
-Package pdftex.def Info: figuras/visaoGeral.png  used on input line 76.
-(pdftex.def)             Requested size: 172.82594pt x 82.98328pt.
+<figuras/taxi_driver.png, id=124, 409.53pt x 246.9225pt>
+File: figuras/taxi_driver.png Graphic file (type png)
+<use figuras/taxi_driver.png>
+Package pdftex.def Info: figuras/taxi_driver.png  used on input line 73.
+(pdftex.def)             Requested size: 148.13867pt x 89.32153pt.
 
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
@@ -627,8 +627,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{5.0}) has been
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.78 \end{Slide}
-                 </home/fabricio.barth/workspaces/reinLearn/slides/figuras/visaoGeral.png>]
+l.79 	\newpage
+               </home/fabricio.barth/workspaces/reinLearn/slides/figuras/taxi_driver.png>]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -638,21 +638,16 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[6
+[6]
+<figuras/chess.jpg, id=137, 501.875pt x 380.42125pt>
+File: figuras/chess.jpg Graphic file (type jpg)
+<use figuras/chess.jpg>
+Package pdftex.def Info: figuras/chess.jpg  used on input line 89.
+(pdftex.def)             Requested size: 148.13867pt x 112.28714pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{6.0}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.86 \end{Slide}
-                ]
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 92.
-<figuras/sequencia.png, id=125, 583.17876pt x 81.30376pt>
-File: figuras/sequencia.png Graphic file (type png)
-<use figuras/sequencia.png>
-Package pdftex.def Info: figuras/sequencia.png  used on input line 99.
-(pdftex.def)             Requested size: 172.82594pt x 24.09357pt.
+LaTeX Warning: Slide 7 overfull by 5.3842pt on input line 95.
+
 
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
@@ -669,107 +664,122 @@ pdfTeX warning (ext4): destination with the same identifier (name{7.0}) has been
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.111 \end{Slide}
+l.95 	\newpage
+               </home/fabricio.barth/workspaces/reinLearn/slides/figuras/chess.jpg>]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[8]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[9]
+<figuras/visaoGeral.png, id=152, 986.68625pt x 473.77pt>
+File: figuras/visaoGeral.png Graphic file (type png)
+<use figuras/visaoGeral.png>
+Package pdftex.def Info: figuras/visaoGeral.png  used on input line 114.
+(pdftex.def)             Requested size: 172.82594pt x 82.98328pt.
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[10
+
+pdfTeX warning (ext4): destination with the same identifier (name{10.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.116 \end{Slide}
+                  </home/fabricio.barth/workspaces/reinLearn/slides/figuras/visaoGeral.png>]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[11
+
+pdfTeX warning (ext4): destination with the same identifier (name{11.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.125 	\newpage
+               ]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[12]
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 135.
+<figuras/sequencia.png, id=168, 583.17876pt x 81.30376pt>
+File: figuras/sequencia.png Graphic file (type png)
+<use figuras/sequencia.png>
+Package pdftex.def Info: figuras/sequencia.png  used on input line 142.
+(pdftex.def)             Requested size: 172.82594pt x 24.09357pt.
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[13
+
+pdfTeX warning (ext4): destination with the same identifier (name{13.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.154 \end{Slide}
                   </home/fabricio.barth/workspaces/reinLearn/slides/figuras/sequencia.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 113.
+(hyperref)                removing `math shift' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 113.
+(hyperref)                removing `\gamma' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 113.
+(hyperref)                removing `math shift' on input line 156.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 113.
+(Font)              <14.4> on input line 156.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 121.
+(Font)              <9> on input line 164.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 121.
+(Font)              <6> on input line 164.
 
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[8
-
-pdfTeX warning (ext4): destination with the same identifier (name{8.0}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.128 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[9
-
-pdfTeX warning (ext4): destination with the same identifier (name{9.0}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.154 \newpage
-              ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[10]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[11]
-<figuras/mapa1.png, id=162, 957.5775pt x 429.605pt>
-File: figuras/mapa1.png Graphic file (type png)
-<use figuras/mapa1.png>
-Package pdftex.def Info: figuras/mapa1.png  used on input line 197.
-(pdftex.def)             Requested size: 246.8953pt x 110.76381pt.
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[12 </home/fabricio.barth/workspaces/reinLearn/slides/figuras/mapa1.png>]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[13]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -785,8 +795,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{14.0}) has bee
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.223 \newpage
-              ]
+l.171 \end{Slide}
+                 ]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -796,7 +806,14 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[15]
+[15
+
+pdfTeX warning (ext4): destination with the same identifier (name{15.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.197 \newpage
+              ]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -817,35 +834,11 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
  []
 
 [17]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[18
-
-pdfTeX warning (ext4): destination with the same identifier (name{18.0}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.331 \end{Slide}
-                 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 333.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\alpha' on input line 333.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 333.
-
+<figuras/mapa1.png, id=206, 957.5775pt x 429.605pt>
+File: figuras/mapa1.png Graphic file (type png)
+<use figuras/mapa1.png>
+Package pdftex.def Info: figuras/mapa1.png  used on input line 240.
+(pdftex.def)             Requested size: 246.8953pt x 110.76381pt.
 
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
@@ -856,17 +849,17 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[19
+[18 </home/fabricio.barth/workspaces/reinLearn/slides/figuras/mapa1.png>]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
 
-pdfTeX warning (ext4): destination with the same identifier (name{19.0}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.338 \end{Slide}
-                 ]
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 340.
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
 
+[19]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -882,8 +875,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{20.0}) has bee
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.351 		\newpage
-                ]
+l.266 \newpage
+              ]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -894,10 +887,6 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
  []
 
 [21]
-
-LaTeX Warning: Slide 22 overfull by 7.09047pt on input line 387.
-
-
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -907,20 +896,7 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[22
-
-pdfTeX warning (ext4): destination with the same identifier (name{22.0}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.387 \end{Slide}
-                 ]
-<figuras/epsilon.png, id=222, 944.52875pt x 361.35pt>
-File: figuras/epsilon.png Graphic file (type png)
-<use figuras/epsilon.png>
-Package pdftex.def Info: figuras/epsilon.png  used on input line 391.
-(pdftex.def)             Requested size: 246.8953pt x 94.45604pt.
-
+[22]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -930,16 +906,12 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[23
+[23]
 
-pdfTeX warning (ext4): destination with the same identifier (name{23.0}) has been already used, duplicate ignored
+LaTeX Warning: Slide 24 overfull by 7.38623pt on input line 377.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.393 \end{Slide}
-                  </home/fabricio.barth/workspaces/reinLearn/slides/figuras/epsilon.png>]
 
-LaTeX Warning: Slide 24 overfull by 6.27512pt on input line 412.
+Overfull \vbox (2.56023pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
@@ -957,11 +929,39 @@ pdfTeX warning (ext4): destination with the same identifier (name{24.0}) has bee
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.412 \end{Slide}
-                 ]
+l.377 \newpage
+              ]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <14.4> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 414.
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[25]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[26]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 415.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\alpha' on input line 415.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 415.
 
 
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
@@ -973,14 +973,21 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[25
+[27
 
-pdfTeX warning (ext4): destination with the same identifier (name{25.0}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{27.0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.423 \end{Slide}
+l.420 \end{Slide}
                  ]
+
+LaTeX Warning: Slide 28 overfull by 7.38623pt on input line 439.
+
+
+Overfull \vbox (2.56023pt too high) has occurred while \output is active []
+
+
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -990,14 +997,17 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[26
+[28
 
-pdfTeX warning (ext4): destination with the same identifier (name{26.0}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{28.0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.438 	\newpage
-               ]
+l.439 \end{Slide}
+                 ]
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <14.4> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 441.
+
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -1007,44 +1017,28 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[27]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
+[29
 
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[28]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[29]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[30
-
-pdfTeX warning (ext4): destination with the same identifier (name{30.0}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{29.0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.471 \end{Slide}
-                 ]
+l.452 		\newpage
+                ]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[30]
+
+LaTeX Warning: Slide 31 overfull by 7.09047pt on input line 488.
+
+
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -1060,37 +1054,184 @@ pdfTeX warning (ext4): destination with the same identifier (name{31.0}) has bee
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.482 \end{Slide}
+l.488 \end{Slide}
+                 ]
+<figuras/epsilon.png, id=278, 944.52875pt x 361.35pt>
+File: figuras/epsilon.png Graphic file (type png)
+<use figuras/epsilon.png>
+Package pdftex.def Info: figuras/epsilon.png  used on input line 492.
+(pdftex.def)             Requested size: 246.8953pt x 94.45604pt.
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[32
+
+pdfTeX warning (ext4): destination with the same identifier (name{32.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.494 \end{Slide}
+                  </home/fabricio.barth/workspaces/reinLearn/slides/figuras/epsilon.png>]
+
+LaTeX Warning: Slide 33 overfull by 6.27512pt on input line 513.
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[33
+
+pdfTeX warning (ext4): destination with the same identifier (name{33.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.513 \end{Slide}
+                 ]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <14.4> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 515.
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[34
+
+pdfTeX warning (ext4): destination with the same identifier (name{34.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.524 \end{Slide}
+                 ]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[35
+
+pdfTeX warning (ext4): destination with the same identifier (name{35.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.539 	\newpage
+               ]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[36]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[37]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[38]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[39
+
+pdfTeX warning (ext4): destination with the same identifier (name{39.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.572 \end{Slide}
+                 ]
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Overfull \hbox (1.83334pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[40
+
+pdfTeX warning (ext4): destination with the same identifier (name{40.0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.583 \end{Slide}
                  ]
 
 *******************************************************
 ***** !! PRINT THIS DOCUMENT IN LANDSCAPE MODE !! *****
 *******************************************************
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 485.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 586.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 586.
 (/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 485.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 485.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 586.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 586.
 Package rerunfilecheck Info: File `reinforcementLearning.out' has not changed.
-(rerunfilecheck)             Checksum: CB8AD3A89FC9D0DBD1368AE1F504371C;1129.
+(rerunfilecheck)             Checksum: 2BF708F7001052898E5B64631E0A170C;1349.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 13627 strings out of 481239
- 231366 string characters out of 5920377
+ 13658 strings out of 481239
+ 231776 string characters out of 5920377
  501494 words of memory out of 5000000
- 28575 multiletter control sequences out of 15000+600000
+ 28588 multiletter control sequences out of 15000+600000
  540044 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,16n,63p,507b,790s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on /home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf (31 pages, 979308 bytes).
+Output written on /home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf (40 pages, 1036424 bytes).
 PDF statistics:
- 361 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 423 PDF objects out of 1000 (max. 8388607)
+ 342 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 215 words of extra memory for PDF output out of 10000 (max. 10000000)
 
