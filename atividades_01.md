@@ -57,17 +57,11 @@ python TaxiDriverGym.py
 
 Lembre-se que nesta execução o programa irá criar toda a Q-table e armazenar no arquivo data/q-table-taxi-driver.csv. Depois de calcular os valores para a Q-table o programa irá resolver um dos possíveis cenários considerando um estado inicial qualquer. Além disso, o programa irá gerar dois plots no diretório results que descrevem a quantidade de ações executadas em cada época. 
 
+* Abra o arquivo `results/actions_taxidriver.jpg`e faça uma análise do mesmo.
+
 * Agora faça o algoritmo [TaxiDriverGym.py](src/TaxiDriverGym.py) ler a Q-table a partir do arquivo gerado anteriormente e veja qual é o comportamento. Execute diversas vezes.
 
 * Qual é o comportamento do agente? Ele sempre consegue encontrar uma solução? As soluções parecem ser ótimas? 
-
-* "Descomente" novamente as linhas 11 e 12, comente a linha 13 e faça  a variável **alpha** receber 0 como apresentado na linha abaixo:
-
-````
-qlearn = QLearning(env, alpha=0, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsilon_dec=0.99, episodes=100000)
-````
-
-* Execute novamente o código [TaxiDriverGym.py](src/TaxiDriverGym.py). O que aconteceu? Qual é a explicação para este comportamento? 
 
 * Altere os parâmetros relacionados com a variável **epsilon** da seguinte forma (aumente epsilon para 0.99 e epsilon_dec para 0.999):
 

@@ -1,3 +1,7 @@
 venv
 *.synctex.gz
 *.fdb_latexmk
+.DS_Store
+src/__pycache__/QLearning.cpython-37.pyc
+
+
