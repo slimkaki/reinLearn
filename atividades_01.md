@@ -73,12 +73,6 @@ Lembre-se que nesta execução o programa irá criar toda a Q-table e armazenar 
 
 * Qual é o comportamento do agente? Ele sempre consegue encontrar uma solução? As soluções parecem ser ótimas? 
 
-* Altere os parâmetros relacionados com a variável **epsilon** da seguinte forma (aumente epsilon para 0.99 e epsilon_dec para 0.999):
-
-````
-qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.99, epsilon_min=0.05, epsilon_dec=0.999, episodes=100000)
-````
-
 * O que aconteceu com o gráfico [src/results/action_taxidriver.jpg](src/results/action_taxidriver.jpg)? 
 
 

@@ -310,7 +310,7 @@ $s_{4}$& 0 & 0  & 0  &  0\\
 \hline
 		$\cdots$& $\cdots$ & $\cdots$ & $\cdots$ &$\cdots$ \\ 
 		\hline
-		$s_{n}$& 0 & 0  & 1  & 0 \\ 
+		$s_{n}$& 0 & 0  & 0  & 0 \\ 
 		\hline
 	\end{tabular}
 \end{center}
@@ -376,23 +376,23 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 		\STATE \textbf{return} $Q(s, a)$
 	\end{algorithmic}
 
-\newpage
-
-\begin{algorithmic} 
-	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
-	\STATE \emph{inicializar os valores de $Q(s, a)$ arbitrariamente}
-	\FOR {todos os episódios}
-	\STATE inicializar $s$ a partir de $env$
-	\REPEAT
-	\STATE escolher uma ação $a$ para um estado $s$
-	\STATE executar a ação $a$
-	\STATE observar a recompensa $r$ e o novo estado $s'$ 
-	\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
-	\STATE$s  \leftarrow s'$
-	\UNTIL {$s$ ser um estado final}
-	\ENDFOR
-	\STATE \textbf{return} $Q(s, a)$
-\end{algorithmic}
+%\newpage
+%
+%\begin{algorithmic} 
+%	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
+%	\STATE \emph{inicializar os valores de $Q(s, a)$ arbitrariamente}
+%	\FOR {todos os episódios}
+%	\STATE inicializar $s$ a partir de $env$
+%	\REPEAT
+%	\STATE escolher uma ação $a$ para um estado $s$
+%	\STATE executar a ação $a$
+%	\STATE observar a recompensa $r$ e o novo estado $s'$ 
+%	\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
+%	\STATE$s  \leftarrow s'$
+%	\UNTIL {$s$ ser um estado final}
+%	\ENDFOR
+%	\STATE \textbf{return} $Q(s, a)$
+%\end{algorithmic}
 
 \newpage
 
