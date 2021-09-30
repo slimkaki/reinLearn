@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1633031527 "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.tex" "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf" "reinforcementLearning" 1633032365
+["pdflatex"] 1633034266 "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.tex" "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf" "reinforcementLearning" 1633034307
   "/etc/texmf/web2c/texmf.cnf" 1621439049 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.aux" 1633031528 2407 d14439132749a7c9cedd8b5dc1d4565f ""
-  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.tex" 1633032365 18955 ba63a6cc6985bcac9e4d658287fca5b0 ""
+  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.aux" 1633034267 2407 d14439132749a7c9cedd8b5dc1d4565f ""
+  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.tex" 1633034307 18920 2edffceb7d47785f6fd25ec2ef2f150f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1136768653 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -146,13 +146,13 @@
   "jomislides.cls" 1630682784 6970 1e8842b8b6fd365bfe0e103de2a54976 ""
   "pagetrans.sty" 1630682784 1030 4a186f2ca66d82c0c5f8f63933b25ce9 ""
   "pause.sty" 1630682784 3096 b49b3bf48f6034c7be80f892dee2644b ""
-  "reinforcementLearning.aux" 1633031528 2407 d14439132749a7c9cedd8b5dc1d4565f "pdflatex"
-  "reinforcementLearning.out" 1633031528 1349 464b85a0f4f68543e4233c59fc3b3b2b "pdflatex"
-  "reinforcementLearning.tex" 1633032365 18955 ba63a6cc6985bcac9e4d658287fca5b0 ""
+  "reinforcementLearning.aux" 1633034267 2407 d14439132749a7c9cedd8b5dc1d4565f "pdflatex"
+  "reinforcementLearning.out" 1633034267 1349 464b85a0f4f68543e4233c59fc3b3b2b "pdflatex"
+  "reinforcementLearning.tex" 1633034307 18920 2edffceb7d47785f6fd25ec2ef2f150f ""
   (generated)
-  "reinforcementLearning.aux"
-  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf"
-  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.log"
-  "reinforcementLearning.log"
   "reinforcementLearning.out"
   "reinforcementLearning.pdf"
+  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.log"
+  "/home/fabricio.barth/workspaces/reinLearn/slides/reinforcementLearning.pdf"
+  "reinforcementLearning.log"
+  "reinforcementLearning.aux"
