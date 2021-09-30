@@ -59,10 +59,12 @@ Até o momento vimos nesta disciplina:
 \begin{Slide}{Ao final desta aula você saberá}
 
 	\begin{itemize}
-	\item o que é \textbf{Aprendizagem por Reforço} e como as suas principais ideias funcionam;
-	\item como o algoritmo \textbf{Q-Learning} funciona e como implementá-lo;
-	\item como implementar um \textbf{agente autônomo} usando aprendizagem por reforço, e;
-	\item como implementar um agente autônomo para atuar nos ambientes do \textbf{projeto \textsc{Gym}}.
+	\item o que é \textbf{Aprendizagem por Reforço} e os seus principais conceitos;
+	\item como desenvolver um agente autônomo usando o algoritmo \textbf{Q-Learning}, e;
+	\item quais os aspectos positivos e negativos do algoritmo \textbf{Q-Learning}.
+	%\item como o algoritmo \textbf{Q-Learning} funciona e como implementá-lo;
+	%\item como implementar um \textbf{agente autônomo} usando aprendizagem por reforço, e;
+	%\item como implementar um agente autônomo para atuar nos ambientes do \textbf{projeto \textsc{Gym}}.
 	\end{itemize}
 
 \end{Slide}
@@ -70,7 +72,7 @@ Até o momento vimos nesta disciplina:
 \begin{Slide}{Taxi Driver}
 
 	\begin{center}
-		\includegraphics[width=.6\textwidth]{figuras/taxi_driver.png}
+		\includegraphics[width=.8\textwidth]{figuras/taxi_driver.png}
 	\end{center}
 
 	Podemos implementar uma solução para este problema usando o algoritmo $A^{*}$. Neste caso, 
@@ -100,8 +102,8 @@ Até o momento vimos nesta disciplina:
 
 	\newpage
 
-	E se fosse possível desenvolver um agente autônomo sem ter que codificar nenhum
-	conhecimento sobre a tarefa que ele precisa executar (heurísticas ou funções de utilidade específicas)? 
+	\emph{E se fosse possível desenvolver um agente autônomo sem ter que codificar nenhum
+	conhecimento sobre a tarefa que ele precisa executar (heurísticas ou funções de utilidade específicas)?} 
 
 \end{Slide}
 
@@ -529,19 +531,19 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 
 \begin{Slide}{Considerações Finais}
 \begin{itemize}
-	\item O algoritmo \textit{Q Learning} pode ser utilizado por agentes que 
+	\item O algoritmo \textit{Q-Learning} pode ser utilizado por agentes que 
 	não tem conhecimento prévio sobre o problema.
 	
-	\item Diversos autores já provaram que o algoritmo \textit{Q Learning} converge 
-	para a função correta $Q$ dentro de certas condições. Por exemplo, uma 
-	delas é garantir que o agente avalie um par $Q(s,a)$ diversas vezes.  
+	%\item Diversos autores já provaram que o algoritmo \textit{Q-Learning} converge 
+	%para a função correta $Q$ dentro de certas condições. Por exemplo, uma 
+	%delas é garantir que o agente avalie um par $Q(s,a)$ diversas vezes.  
 	
-	\newpage
+	%\newpage
 	
-	\item \textit{Q Learning} converge tanto para processos de decisão de Markov 
+	\item \textit{Q-Learning} converge tanto para processos de decisão de Markov 
 	(MDP) \textbf{determinísticos} e \textbf{não-determinísticos}.
 	
-	\item Na prática, o algoritmo \textit{Q Learning} necessita de muitas iterações de 
+	\item Na prática, o algoritmo \textit{Q-Learning} necessita de muitas iterações de 
 	treinamento até convergir, inclusive para problemas que não tem um espaço de busca 
 	tão grande.   
 
@@ -565,9 +567,10 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 
 \begin{Slide}{O que vimos até o momento?}
 \begin{itemize}
-	\item Conceitos básicos de Aprendizagem por Reforço.
-	\item Funcionamento do algoritmo Q-Learning.
-	\item Funcionamento da biblioteca Gym. 
+	\item o que é \textbf{Aprendizagem por Reforço} e os seus principais conceitos;
+	\item como desenvolver um agente autônomo usando o algoritmo \textbf{Q-Learning};
+	\item quais os aspectos positivos e negativos do algoritmo \textbf{Q-Learning}, e;
+	\item funcionamento da biblioteca \textbf{Gym}. 
 \end{itemize}
 \end{Slide}
 

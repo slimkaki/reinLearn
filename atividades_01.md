@@ -37,6 +37,16 @@ py.exe -m pip install cmake 'gym[atari]' scipy
 
 * O que a variável reward retornada por `env.step(<number>)` significa? 
 
+### Trabalhe com o arquivo [FrozenLake_introduction.py](src/FrozenLake_introduction.py)
+
+* Leia a descrição do ambiente em [https://github.com/openai/gym/wiki/FrozenLake-v0](https://github.com/openai/gym/wiki/FrozenLake-v0).
+
+* Veja o que está codificado no arquivo e execute o mesmo.
+
+* Quantos estados e quantas ações o ambiente FrozenLake-v1 tem?
+
+* O que aconteceu com a execução das ações? O resultado foi o esperado? Descreva o que aconteceu.
+
 ## Atividades que devem ser executadas durante a aula
 
 ### Trabalhe com o arquivo [TaxiDriverGym.py](src/TaxiDriverGym.py)
@@ -71,15 +81,6 @@ qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.99, epsilon_min=0.05, ep
 
 * O que aconteceu com o gráfico [src/results/action_taxidriver.jpg](src/results/action_taxidriver.jpg)? 
 
-### Trabalhe com o arquivo [FrozenLake_introduction.py](src/FrozenLake_introduction.py)
-
-* Leia a descrição do ambiente em [https://github.com/openai/gym/wiki/FrozenLake-v0](https://github.com/openai/gym/wiki/FrozenLake-v0).
-
-* Veja o que está codificado no arquivo e execute o mesmo.
-
-* Quantos estados e quantas ações o ambiente FrozenLake-v1 tem?
-
-* O que aconteceu com a execução das ações? O resultado foi o esperado? Descreva o que aconteceu.
 
 ### Trabalhe com o arquivo [FrozenLake.py](src/FrozenLake.py)
 
