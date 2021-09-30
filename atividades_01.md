@@ -67,7 +67,7 @@ python TaxiDriverGym.py
 
 Lembre-se que nesta execução o programa irá criar toda a Q-table e armazenar no arquivo data/q-table-taxi-driver.csv. Depois de calcular os valores para a Q-table o programa irá resolver um dos possíveis cenários considerando um estado inicial qualquer. Além disso, o programa irá gerar dois plots no diretório results que descrevem a quantidade de ações executadas em cada época. 
 
-* Abra o arquivo [src/results/action_taxidriver.jpg](src/results/action_taxidriver.jpg) e faça uma análise do mesmo.
+* Abra o arquivo [results/action_taxidriver.jpg](results/action_taxidriver.jpg) e faça uma análise do mesmo.
 
 * Agora faça o algoritmo [TaxiDriverGym.py](src/TaxiDriverGym.py) ler a Q-table a partir do arquivo gerado anteriormente e veja qual é o comportamento. Execute diversas vezes.
 
