@@ -1,139 +1,130 @@
-\documentclass[landscape,pdftex]{jomislides}
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
 
-\slidesmag{5} % escala, qto maior maiores serão as letras/figras/etc.
-
-%\centerslidesfalse
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{color}
+\usepackage{colortbl}
 
 \usepackage{algorithmic}
 
-%
-% Slides
-% ======
-%
-
-
 \begin{document}
 
-%\input{autorHeaders}
-
-\title{Aprendizagem por Reforço} 
-\author{Fabrício Barth}
-\institution{}
-\date{Outubro de 2021}
-
-\SlideHeader{}
-            {Disciplina de Inteligência Artificial}
-\SlideFooter{\theslidepartheading $\;$ --- $\;$ \theslideheading}
-            { \theslide}
-
-\vpagecolor[white]{white}
-
-
-\subtitle{}
+\title{Aprendizagem por ReforÃ§o} 
+\author{FabrÃ­cio Barth}
+\institute{Insper Instituto de Ensino e Pesquisa}
+\date{Maio de 2022}
 
 \maketitle
 
-\begin{Slide}{Contexto}
-Até o momento vimos nesta disciplina:
+\begin{frame}{Contexto}
+AtÃ© o momento vimos nesta disciplina:
 \begin{itemize}
-	\item Conceito de Agente Autônomo;
-	\item Solução de problemas usando busca em espaço de estados:
+	\item Conceito de Agente AutÃ´nomo;
+	\item SoluÃ§Ã£o de problemas usando busca em espaÃ§o de estados:
 	\begin{itemize}
 		\item Algoritmos de busca cega, e;
 		\item Algoritmos de busca informados.
 	\end{itemize}
 	\item Busca competitiva.
 \end{itemize}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Conteúdo desta aula}
+\begin{frame}{ConteÃºdo desta aula e das prÃ³ximas}
   \begin{itemize}
-\item Visão Geral sobre Aprendizagem por Reforço
+\item VisÃ£o Geral sobre Aprendizagem por ReforÃ§o
 \item Algoritmo Q-Learning
-\item Implementações com o projeto \textsc{Gym}
-\item Considerações Finais
+\item ImplementaÃ§Ãµes com o projeto \textsc{Gym}
+\item ConsideraÃ§Ãµes Finais
 \item Material de Consulta
   \end{itemize}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Ao final desta aula você saberá}
+\begin{frame}{Ao final deste material vocÃª saberÃ¡}
 
 	\begin{itemize}
-	\item o que é \textbf{Aprendizagem por Reforço} e os seus principais conceitos;
-	\item como desenvolver um agente autônomo usando o algoritmo \textbf{Q-Learning}, e;
+	\item o que Ã© \textbf{Aprendizagem por ReforÃ§o} e os seus principais conceitos;
+	\item como desenvolver um agente autÃ´nomo usando o algoritmo \textbf{Q-Learning}, e;
 	\item quais os aspectos positivos e negativos do algoritmo \textbf{Q-Learning}.
-	%\item como o algoritmo \textbf{Q-Learning} funciona e como implementá-lo;
-	%\item como implementar um \textbf{agente autônomo} usando aprendizagem por reforço, e;
-	%\item como implementar um agente autônomo para atuar nos ambientes do \textbf{projeto \textsc{Gym}}.
+	%\item como o algoritmo \textbf{Q-Learning} funciona e como implementÃ¡-lo;
+	%\item como implementar um \textbf{agente autÃ´nomo} usando aprendizagem por reforÃ§o, e;
+	%\item como implementar um agente autÃ´nomo para atuar nos ambientes do \textbf{projeto \textsc{Gym}}.
 	\end{itemize}
 
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Taxi Driver}
+\begin{frame}{Taxi Driver}
 
 	\begin{center}
 		\includegraphics[width=.8\textwidth]{figuras/taxi_driver.png}
 	\end{center}
 
-	Podemos implementar uma solução para este problema usando o algoritmo $A^{*}$. Neste caso, 
-	\emph{o que é necessário fazer?}
+	Podemos implementar uma soluÃ§Ã£o para este problema usando o algoritmo $A^{*}$. Neste caso, 
+	\textbf{o que Ã© necessÃ¡rio fazer?}
 
-	\newpage
+\end{frame}
 
-	Definir uma Heurística $H$ que seja admissível e que traga algum valor para o 
+\begin{frame}{Taxi Driver}
+
+	Definir uma HeurÃ­stica $H$ que seja admissÃ­vel e que traga algum valor para o 
 	processo de busca.
 
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Ambientes competitivos}
+\begin{frame}{Ambientes competitivos}
 
 	\begin{center}
 		\includegraphics[width=.6\textwidth]{figuras/chess.jpg}
 	\end{center}
 
-	Podemos implementar uma solução para este tipo de problema usando o algoritmo 
-	\textsc{Min-Max}. Neste caso, \emph{o que é necessário fazer?}
+	Podemos implementar uma soluÃ§Ã£o para este tipo de problema usando o algoritmo 
+	\textsc{Min-Max}. Neste caso, \emph{o que Ã© necessÃ¡rio fazer?}
 
-	\newpage
+\end{frame}
 
-	Definir uma função de utilidade que consegue descrever a utilidade dos estados 
-	possíveis para o meu agente.
+\begin{frame}{Ambientes competitivos}
 
-
-	\newpage
-
-	\emph{E se fosse possível desenvolver um agente autônomo sem ter que codificar nenhum
-	conhecimento sobre a tarefa que ele precisa executar (heurísticas ou funções de utilidade específicas)?} 
-
-\end{Slide}
+	Definir uma funÃ§Ã£o de utilidade que consegue descrever a utilidade dos estados 
+	possÃ­veis para o meu agente.
 
 
-\begin{Slide}{Aprendizagem por Reforço: Visão Geral}
+\end{frame}
+
+\begin{frame}{QuestÃ£o}
+
+	E se fosse possÃ­vel desenvolver um agente autÃ´nomo sem ter que codificar nenhum
+	conhecimento sobre a tarefa que ele precisa executar (heurÃ­sticas ou funÃ§Ãµes de utilidade especÃ­ficas)?
+
+\end{frame}
+
+
+\begin{frame}{Aprendizagem por ReforÃ§o: VisÃ£o Geral}
 	\small
-	Um agente aprende a resolver uma tarefa através de repetidas interações com o ambiente, por tentativa e erro, recebendo 
-	(esporadicamente) reforços (punições ou recompensas) como retorno.
+	Um agente aprende a resolver uma tarefa atravÃ©s de repetidas interaÃ§Ãµes com o ambiente, por tentativa e erro, recebendo 
+	(esporadicamente) reforÃ§os (puniÃ§Ãµes ou recompensas) como retorno.
   \begin{center}
 	\includegraphics[width=.7\textwidth]{figuras/visaoGeral.png}
 \end{center}
-\end{Slide}
 
-\begin{Slide}{Aprendizagem por Reforço: Visão Geral}
+\end{frame}
+
+\begin{frame}{Aprendizagem por ReforÃ§o: VisÃ£o Geral}
 	\begin{itemize}
-	\item Este agente não tem conhecimento algum sobre a tarefa que precisa executar (heurísticas ou funções de utilidade específicas).
-	\item A \textbf{tarefa} deste agente é executar uma \textbf{sequência de ações}, observar as suas \textbf{consequências} e aprender uma \textbf{política de controle}.
-	
+	\item<1-> Este agente nÃ£o tem conhecimento algum sobre a tarefa que precisa executar (heurÃ­sticas ou funÃ§Ãµes de utilidade especÃ­ficas).
+	\item<2-> A \textbf{tarefa} deste agente Ã© executar uma \textbf{sequÃªncia de aÃ§Ãµes}, observar as suas \textbf{consequÃªncias} e aprender uma \textbf{polÃ­tica de controle}.	
 	\end{itemize}
+\end{frame}
 
-	\newpage
+\begin{frame}{Aprendizagem por ReforÃ§o: VisÃ£o Geral}
+	\begin{block}{}
+		O que Ã© uma polÃ­tica de controle?	
+	\end{block}
+\end{frame}
 
-	\emph{O que é uma política de controle?}
-	
-\end{Slide}
 
-
-\begin{Slide}{Política de Controle}
+\begin{frame}{PolÃ­tica de Controle}
 	\begin{itemize}
-	\item A política de controle desejada é aquela que \textbf{maximiza} os reforços 
+	\item A polÃ­tica de controle desejada Ã© aquela que \textbf{maximiza} os reforÃ§os 
 	(\textit{reward}) acumulados ao longo do tempo pelo 
 	agente: $r_{0} + \gamma r_{1} + \gamma^{2} r_{2} + \cdots $ onde $0 \leq \gamma < 1$.
 	\end{itemize}
@@ -145,39 +136,39 @@ Até o momento vimos nesta disciplina:
 \end{center}
 
 \begin{itemize}
-	\item O $V(s_{1})$ será a soma de $r_{1}$ com o $V(s_{2})$. No entanto, considerando 
+	\item O $V(s_{1})$ serÃ¡ a soma de $r_{1}$ com o $V(s_{2})$. No entanto, considerando 
 	o fator de desconto $\gamma$, temos: $V(s_{1}) = r_{1} + \gamma V(s_{2}) $.
 	
-	\item O valor de um estado final leva-se em consideração apenas o 
-	reforço: $V(s_{n}) = r_{n}$.
+	\item O valor de um estado final leva-se em consideraÃ§Ã£o apenas o 
+	reforÃ§o: $V(s_{n}) = r_{n}$.
 	
 	%\item Resumindo, temos: $V(s) = \sum_{t} \gamma^{t} R$
 \end{itemize}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Fator de desconto $\gamma$}
+\begin{frame}{Fator de desconto $\gamma$}
 	\small
 	\begin{itemize}
-		%\item Para tarefas episódicas, o retorno é fácil de ser calculado, 
-		%pois será a soma de todas as recompensas obtidas pelo agente. 
-		%Mas para tarefas contínuas, como a atividade não tem fim e não podemos 
-		%somar até o infinito, há a necessidade da inserção de um fator de 
+		%\item Para tarefas episÃ³dicas, o retorno Ã© fÃ¡cil de ser calculado, 
+		%pois serÃ¡ a soma de todas as recompensas obtidas pelo agente. 
+		%Mas para tarefas contÃ­nuas, como a atividade nÃ£o tem fim e nÃ£o podemos 
+		%somar atÃ© o infinito, hÃ¡ a necessidade da inserÃ§Ã£o de um fator de 
 		%desconto ($\gamma$).
-		\item O fator de desconto ($\gamma$) é um hiperparâmetro que consiste 
-		em um número entre 0 e 1 que define a importância das recompensas futuras 
-		em relação a atual	($0 \leq \gamma < 1$).
-		\item Valores mais próximos ao 0 dão mais importância a recompensas 
-		imediatas enquanto os mais próximos de 1 tentarão manter a importância 
+		\item O fator de desconto ($\gamma$) Ã© um hiperparÃ¢metro que consiste 
+		em um nÃºmero entre 0 e 1 que define a importÃ¢ncia das recompensas futuras 
+		em relaÃ§Ã£o a atual	($0 \leq \gamma < 1$).
+		\item Valores mais prÃ³ximos ao 0 dÃ£o mais importÃ¢ncia a recompensas 
+		imediatas enquanto os mais prÃ³ximos de 1 tentarÃ£o manter a importÃ¢ncia 
 		de recompensas futuras.
 	\end{itemize}
-\end{Slide}
+\end{frame}
 
 
-\begin{Slide}{Exemplo}
+\begin{frame}{Exemplo}
 	\begin{center}
 		\begin{tabular}{ |c|c|c|c| } 
 			\hline
-			\cellcolor{red!25} Início & Campo & Campo & Campo \\ 
+			\cellcolor{red!25} InÃ­cio & Campo & Campo & Campo \\ 
 			\hline
 			Campo & \cellcolor{black!25} Buraco & Campo &  \cellcolor{black!25} Buraco\\ 
 			\hline
@@ -190,28 +181,37 @@ Até o momento vimos nesta disciplina:
 
 \vspace{0.2cm}
 \small
-\textbf{Ações}: 
+\textbf{AÃ§Ãµes}: 
 \begin{itemize}
 	\item (0) Mover para Baixo; (1)	Mover para Cima; 
 	\item (2) Move para Direita; (3) Move para Esquerda.
 \end{itemize}
 
-\newpage
+\end{frame}
+
+
+\begin{frame}{Algoritmo Q-Learning}
 
 \begin{itemize}
-	\item Considerando que o local do objetivo, dos buracos e dos campos serão sempre 
-	os mesmos então temos \textbf{16} estados possíveis. 
-	\item Este problema tem \textbf{4} ações possíveis. 
+	\item Considerando que o local do objetivo, dos buracos e dos campos serÃ£o sempre 
+	os mesmos entÃ£o temos \textbf{16} estados possÃ­veis. 
+	\item Este problema tem \textbf{4} aÃ§Ãµes possÃ­veis. 
 	\item Se o agente cair em um buraco ele recebe $-1$ como recompensa, se ele ir para um 
 	campo ele recebe $0$ e ao chegar no objetivo ele recebe $1$.  
-	\item Para que agente possa identificar uma política de controle ótima este agente 
-	precisa criar um \textbf{mapeamento} entre \textbf{estados} (S) e \textbf{ações} (A)
+	\item Para que agente possa identificar uma polÃ­tica de controle Ã³tima este agente 
+	precisa criar um \textbf{mapeamento} entre \textbf{estados} (S) e \textbf{aÃ§Ãµes} (A)
 	
-	\newpage
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Algoritmo Q-Learning}
 	
-	\item Este mapeamento pode ser representado por uma função $Q(S,A)$ onde $S$ são 
-	todos os estados possíveis ($s_{1}, s_{2}, \cdots$) e onde $A$ são todas as 
-	ações possíveis ($a_{1}, a_{2}, \cdots$)
+\begin{itemize}
+	
+	\item Este mapeamento pode ser representado por uma funÃ§Ã£o $Q(S,A)$ onde $S$ sÃ£o 
+	todos os estados possÃ­veis ($s_{1}, s_{2}, \cdots$) e onde $A$ sÃ£o todas as 
+	aÃ§Ãµes possÃ­veis ($a_{1}, a_{2}, \cdots$)
 
 \end{itemize}
 
@@ -232,46 +232,47 @@ Até o momento vimos nesta disciplina:
 \end{center}
 
 \begin{itemize}
-	\item Para criar um \textbf{mapeamento} $Q(S,A)$ é necessário executar o 
-	agente no ambiente considerando o \textbf{reforço} dado por cada ação. 
+	\item Para criar um \textbf{mapeamento} $Q(S,A)$ Ã© necessÃ¡rio executar o 
+	agente no ambiente considerando o \textbf{reforÃ§o} dado por cada aÃ§Ã£o. 
 \end{itemize}
 
-\newpage
+\end{frame}
+
+
+\begin{frame}{Algoritmo Q-Learning}
 
   \begin{center}
 	\includegraphics[width=\textwidth]{figuras/mapa1.png}
 \end{center}
 
-\newpage
+\end{frame}
 
-\begin{itemize}
-%	\item Qual é a recompensa do agente se ele seguir os seguintes caminhos? 
-%	\begin{itemize}
-%		\item $baixo \rightarrow baixo \rightarrow baixo \rightarrow esquerda \rightarrow esquerda \rightarrow esquerda \rightarrow direita$
-%		\item $baixo \rightarrow direita \rightarrow baixo \rightarrow esquerda \rightarrow esquerda \rightarrow baixo $
-%	\end{itemize}
-	\item \emph{Como é que o agente pode saber quais são as melhores ações em cada estado?}
-\end{itemize}
+\begin{frame}{Algoritmo Q-Learning}
+
+	\begin{block}{}
+		Como Ã© que o agente pode saber quais sÃ£o as melhores aÃ§Ãµes em cada estado?
+	\end{block}
 	
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Algoritmo Q-Learning}
+\begin{frame}{Algoritmo Q-Learning}
 	\begin{itemize}
-		\item A ideia é fazer com que o agente aprenda a função de mapeamento $Q(S,A)$. 
-		Ou seja, que seja capaz de identificar qual é a melhor ação para cada estado 
-		através das suas \textbf{experiências}. 
+		\item A ideia Ã© fazer com que o agente aprenda a funÃ§Ã£o de mapeamento $Q(S,A)$. 
+		Ou seja, que seja capaz de identificar qual Ã© a melhor aÃ§Ã£o para cada estado 
+		atravÃ©s das suas \textbf{experiÃªncias}. 
 		\item \textit{Testando} \textbf{infinitas} vezes o ambiente. 
-		Ou seja, \textit{testando} \textbf{muitas} vezes as combinações entre 
-		\textbf{estados} ($S$) e \textbf{ações} ($A$). 
+		Ou seja, \textit{testando} \textbf{muitas} vezes as combinaÃ§Ãµes entre 
+		\textbf{estados} ($S$) e \textbf{aÃ§Ãµes} ($A$). 
 	\end{itemize}
 
-\newpage
+\end{frame}
 
+\begin{frame}{Algoritmo Q-Learning}
 \begin{small}
 \begin{center}
 	\begin{tabular}{ |c|c|c|c| } 
 		\hline
-		\cellcolor{red!25} Início & Campo & Campo & Campo \\ 
+		\cellcolor{red!25} InÃ­cio & Campo & Campo & Campo \\ 
 		\hline
 		Campo & \cellcolor{black!25} Buraco & Campo &  \cellcolor{black!25} Buraco\\ 
 		\hline
@@ -283,7 +284,7 @@ Até o momento vimos nesta disciplina:
 \end{center}
 \end{small}
 
-Primeiro episódio ($\gamma = 0.9$):
+Primeiro episÃ³dio ($\gamma = 0.9$):
 \begin{eqnarray}
 Q(s_{1}, baixo) \leftarrow  r + \gamma \max_{a'}{Q(s', a')} \nonumber \\
 Q(s_{1}, baixo) \leftarrow  0 + 0.9 \times \max[0, 0, 0] \nonumber \\
@@ -291,9 +292,11 @@ Q(s_{2}, direita) \leftarrow  -1 + 0.9 \times \max[0, 0, 0,0] \nonumber \\
 %Q(s_{n}, direita) \leftarrow  1 + 0.9 \times \max[0, 0, 0,0] \nonumber
 \end{eqnarray}
 
-\newpage
+\end{frame}
 
-Q-table resultante da execução do $1^{o}$ episódio. 
+\begin{frame}{Algoritmo Q-Learning}
+
+Q-table resultante da execuÃ§Ã£o do $1^{o}$ episÃ³dio. 
 
 	\begin{center}
 	\begin{tabular}{ |c|c|c|c|c| } 
@@ -314,15 +317,16 @@ $s_{4}$& 0 & 0  & 0  &  0\\
 		\hline
 	\end{tabular}
 \end{center}
+\end{frame}
 
-%\newpage
+%\begin{frame}{Algoritmo Q-Learning}
 %
-%Já na execução do $2^{o}$ episódio... 
+%JÃ¡ na execuÃ§Ã£o do $2^{o}$ episÃ³dio... 
 %
 %	\begin{center}
 %	\begin{tabular}{ |c|c|c|c| } 
 %		\hline
-%		 Início & Campo & Campo & Campo \\ 
+%	 InÃ­cio & Campo & Campo & Campo \\ 
 %		\hline
 %		Campo & \cellcolor{black!25} Buraco & Campo (0.0) &  \cellcolor{black!25} Buraco\\ 
 %		\hline
@@ -332,10 +336,12 @@ $s_{4}$& 0 & 0  & 0  &  0\\
 %		\hline
 %	\end{tabular}
 %\end{center}
+%
+%\end{frame}
 
-\newpage
+\begin{frame}{Algoritmo Q-Learning}
 
-Q-table resultante da execução do $n$-éssimo episódio. 
+Q-table resultante da execuÃ§Ã£o do $n$-Ã©ssimo episÃ³dio. 
 
 \begin{center}
 	\begin{tabular}{ |c|c|c|c|c| } 
@@ -353,21 +359,20 @@ Q-table resultante da execução do $n$-éssimo episódio.
 	\end{tabular}
 \end{center}
 
-Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada estado. 
+ApÃ³s a execuÃ§Ã£o de $n$ episÃ³dios o agente conhece qual a melhor aÃ§Ã£o para cada estado. 
 
-\end{Slide}
+\end{frame}
 
 
-\begin{Slide}{Algoritmo Q-Learning } 
-	\small
+\begin{frame}{Algoritmo Q-Learning} 
 	\begin{algorithmic} 
-		\STATE \emph{\textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)}
+		\STATE \emph{\textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episÃ³dios)}
 		\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
-		\FOR {todos os episódios}
+		\FOR {todos os episÃ³dios}
 		\STATE inicializar $s$ a partir de $env$
 		\REPEAT
-		\STATE escolher uma ação $a$ para um estado $s$
-		\STATE executar a ação $a$
+		\STATE escolher uma aÃ§Ã£o $a$ para um estado $s$
+		\STATE executar a aÃ§Ã£o $a$
 		\STATE observar a recompensa $r$ e o novo estado $s'$ 
 		\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
 		\STATE$s  \leftarrow s'$
@@ -375,62 +380,65 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 		\ENDFOR
 		\STATE \textbf{return} $Q(s, a)$
 	\end{algorithmic}
+\end{frame}
 
-%\newpage
+%%\begin{frame}{Algoritmo Q-Learning} 
+%%\begin{algorithmic} 
+%%	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episÃ³dios)
+%%	\STATE \emph{inicializar os valores de $Q(s, a)$ arbitrariamente}
+%%	\FOR {todos os episÃ³dios}
+%%	\STATE inicializar $s$ a partir de $env$
+%%	\REPEAT
+%%	\STATE escolher uma aÃ§Ã£o $a$ para um estado $s$
+%%	\STATE executar a aÃ§Ã£o $a$
+%%	\STATE observar a recompensa $r$ e o novo estado $s'$ 
+%%	\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
+%%	\STATE$s  \leftarrow s'$
+%%	\UNTIL {$s$ ser um estado final}
+%%	\ENDFOR
+%%	\STATE \textbf{return} $Q(s, a)$
+%%\end{algorithmic}
 %
+%\end{frame}
+%
+
+%\begin{frame}{Algoritmo Q-Learning} 
 %\begin{algorithmic} 
-%	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
-%	\STATE \emph{inicializar os valores de $Q(s, a)$ arbitrariamente}
-%	\FOR {todos os episódios}
+%	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episÃ³dios)
+%	\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
+%	\FOR {todos os episÃ³dios}
 %	\STATE inicializar $s$ a partir de $env$
 %	\REPEAT
-%	\STATE escolher uma ação $a$ para um estado $s$
-%	\STATE executar a ação $a$
+%	\STATE escolher uma aÃ§Ã£o $a$ para um estado $s$
+%	\STATE executar a aÃ§Ã£o $a$
 %	\STATE observar a recompensa $r$ e o novo estado $s'$ 
-%	\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
+%	\STATE \emph{$Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$}
 %	\STATE$s  \leftarrow s'$
 %	\UNTIL {$s$ ser um estado final}
 %	\ENDFOR
 %	\STATE \textbf{return} $Q(s, a)$
 %\end{algorithmic}
+%
+%\end{frame}
+%
 
-\newpage
-
-\begin{algorithmic} 
-	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
-	\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
-	\FOR {todos os episódios}
-	\STATE inicializar $s$ a partir de $env$
-	\REPEAT
-	\STATE escolher uma ação $a$ para um estado $s$
-	\STATE executar a ação $a$
-	\STATE observar a recompensa $r$ e o novo estado $s'$ 
-	\STATE \emph{$Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$}
-	\STATE$s  \leftarrow s'$
-	\UNTIL {$s$ ser um estado final}
-	\ENDFOR
-	\STATE \textbf{return} $Q(s, a)$
-\end{algorithmic}
-
-\end{Slide}
-
-\begin{Slide}{Algoritmo Q-Learning: hiperparâmetro $\alpha$}
+\begin{frame}{Algoritmo Q-Learning: hiperparÃ¢metro $\alpha$}
 	\begin{itemize}
-		\item $\alpha$ é a taxa de aprendizado ($0 < \alpha \leq 1$), quanto maior, 
-		mais valor dá ao novo aprendizado.
+		\item $\alpha$ Ã© a taxa de aprendizado ($0 < \alpha \leq 1$), quanto maior, 
+		mais valor dÃ¡ ao novo aprendizado.
 	\end{itemize}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Que ação escolher?} 
+\begin{frame}{Que aÃ§Ã£o escolher?} 
 	\small
 	\begin{algorithmic} 
-		\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
+		\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episÃ³dios)
 		\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
-		\FOR {todos os episódios}
+		\FOR {todos os episÃ³dios}
 		\STATE inicializar $s$ a partir de $env$
 		\REPEAT
-		\STATE \emph{escolher uma ação $a$ para um estado $s$}
-		\STATE executar a ação $a$
+		\STATE \emph{escolher uma aÃ§Ã£o $a$ para um estado $s$}
+		\STATE executar a aÃ§Ã£o $a$
 		\STATE observar a recompensa $r$ e o novo estado $s'$ 
 		\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
 		\STATE$s  \leftarrow s'$
@@ -438,36 +446,35 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 		\ENDFOR
 		\STATE \textbf{return} $Q(s, a)$
 	\end{algorithmic}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{\textit{Exploration} vs \textit{Exploitation}}
+
+\begin{frame}{\textit{Exploration} vs \textit{Exploitation}}
 	\begin{itemize}
-		\item A política que o agente utiliza para escolher 
-		uma ação $a$ para um estado $s$ não interfere no aprendizado 
+		\item<1-> A polÃ­tica que o agente utiliza para escolher 
+		uma aÃ§Ã£o $a$ para um estado $s$ nÃ£o interfere no aprendizado 
 		da \textit{Q-table}.
-		\item No entanto, para que o algoritmo \textit{Q-learning} possa convergir 
-		para um determinado problema é necessário que o algoritmo visite pares de 
-		ação-estado infinitas (muitas) vezes.
-		\item Por isso, que a escolha de determinada \textit{ação} em um \textit{estado} 
-		poderia ser feita de forma \textbf{aleatória}. 
+		\item<2-> No entanto, para que o algoritmo \textit{Q-learning} possa convergir 
+		para um determinado problema Ã© necessÃ¡rio que o algoritmo visite pares de 
+		aÃ§Ã£o-estado infinitas (muitas) vezes.
+		\item<3-> Por isso, que a escolha de determinada \textit{aÃ§Ã£o} em um \textit{estado} 
+		poderia ser feita de forma \textbf{aleatÃ³ria}. 
 		
-		\newpage
+		\item<4-> PorÃ©m, normalmente se utiliza uma polÃ­tica que inicialmente escolhe 
+		aleatoriamente as aÃ§Ãµes, e, Ã  medida que vai aprendendo, passa a utilizar cada 
+		vez mais as decisÃµes determinadas pela polÃ­tica derivada de $Q$. 
 		
-		\item Porém, normalmente se utiliza uma política que inicialmente escolhe 
-		aleatoriamente as ações, e, à medida que vai aprendendo, passa a utilizar cada 
-		vez mais as decisões determinadas pela política derivada de $Q$. 
-		
-		\item Esta estratégia inicia \textbf{explorando} (tentar uma ação mesmo que ela não 
-		tenha o maior valor de $Q$) e termina escolhendo a ação que tem o 
+		\item<5-> Esta estratÃ©gia inicia \textbf{explorando} (tentar uma aÃ§Ã£o mesmo que ela nÃ£o 
+		tenha o maior valor de $Q$) e termina escolhendo a aÃ§Ã£o que tem o 
 		maior valor de $Q$ (\textit{exploitation}).  
 		
 	\end{itemize}
-\end{Slide}
+\end{frame}
 
 
-\begin{Slide}{Exemplo de função para escolha de ações}
+\begin{frame}{Exemplo de funÃ§Ã£o para escolha de aÃ§Ãµes}
 	
-	A escolha de uma ação para um estado é dada pela função:
+	A escolha de uma aÃ§Ã£o para um estado Ã© dada pela funÃ§Ã£o:
 	
 	\vspace{0.3cm}
 	
@@ -475,36 +482,37 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 		\STATE \textbf{function} escolha($s$, $\epsilon$): $a$
 		\STATE rv = random ($0 < rv \leq 1$)
 		\IF{$rv < \epsilon$}
-		\STATE \textbf{return} uma ação $\alpha$ aleatória em $A$
+		\STATE \textbf{return} uma aÃ§Ã£o $\alpha$ aleatÃ³ria em $A$
 		\ENDIF   
 		\STATE \textbf{return} $\max_{a}{Q(s, a)} $
 	\end{algorithmic}
 
 	\vspace{0.3cm}
 	
-	O fator de exploração $\epsilon$ ($0 \leq \epsilon \leq 1$) inicia com um valor 
-	alto ($0.7$, por exemplo) e, conforme a simulação avança, 
+	O fator de exploraÃ§Ã£o $\epsilon$ ($0 \leq \epsilon \leq 1$) inicia com um valor 
+	alto ($0.7$, por exemplo) e, conforme a simulaÃ§Ã£o avanÃ§a, 
 	diminiu: $\epsilon \leftarrow \epsilon \times \epsilon_{dec}$, 
 	onde $\epsilon_{dec} = 0.99$
 	
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Epsilon}
+
+\begin{frame}{Epsilon}
 	  \begin{center}
 		\includegraphics[width=\textwidth]{figuras/epsilon.png}
 	\end{center}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Algoritmo Q-Learning}
-	\small
+\begin{frame}{Algoritmo Q-Learning}
+	
 \begin{algorithmic} 
-	\STATE \emph{\textbf{function} Q-Learning(env, $\alpha$, $\gamma$, $\epsilon$, $\epsilon_{min}$, $\epsilon_{dec}$, episódios)}
+	\STATE \emph{\textbf{function} Q-Learning(env, $\alpha$, $\gamma$, $\epsilon$, $\epsilon_{min}$, $\epsilon_{dec}$, episÃ³dios)}
 	\STATE inicializar os valores de $Q(s, a)$ arbitrariamente
-	\FOR {todos os episódios}
+	\FOR {todos os episÃ³dios}
 	\STATE inicializar $s$ a partir de $env$
 	\REPEAT
 	\STATE $a \leftarrow escolha(s, \epsilon)$
-	\STATE $s', r \leftarrow$ executar a ação $a$ no $env$
+	\STATE $s', r \leftarrow$ executar a aÃ§Ã£o $a$ no $env$
 	\STATE $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
 	\STATE$s  \leftarrow s'$
 	\UNTIL {$s$ ser um estado final}
@@ -512,78 +520,81 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para cada e
 	\ENDFOR
 	\STATE \textbf{return} Q
 \end{algorithmic}	
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Implementações com o projeto \textsc{Gym}}
-	\small
+\begin{frame}{ImplementaÃ§Ãµes com o projeto \textsc{Gym}}
 	\begin{itemize}
-		\item Siga as orientações que estão no arquivo README.md da 
+		\item Siga as orientaÃ§Ãµes que estÃ£o no arquivo README.md da 
 		pasta https://github.com/fbarth/reinLearn.
 		
-		\item Execute as atividades que estão descritas no arquivo atividades\_01.md no 
-		mesmo diretório (https://github.com/fbarth/reinLearn/atividades\_01.md). 
+		\item Execute as atividades que estÃ£o descritas no arquivo atividades\_01.md no 
+		mesmo diretÃ³rio (https://github.com/fbarth/reinLearn/atividades\_01.md). 
 	\end{itemize}
-\end{Slide}
+\end{frame}
 
-%\begin{Slide}{Q-Learning com GridSearch}
-%Faz sentido usar GridSearch para encontrar os melhores valores de $\alpha$ e $\gamma$? 
-%\end{Slide}
+%%\begin{frame}{Q-Learning com GridSearch}
+%%Faz sentido usar GridSearch para encontrar os melhores valores de $\alpha$ e $\gamma$? 
+%%\end{frame}
 
-\begin{Slide}{Considerações Finais}
+
+
+\begin{frame}{ConsideraÃ§Ãµes Finais}
 \begin{itemize}
 	\item O algoritmo \textit{Q-Learning} pode ser utilizado por agentes que 
-	não tem conhecimento prévio sobre o problema.
+	nÃ£o tem conhecimento prÃ©vio sobre o problema.
 	
-	%\item Diversos autores já provaram que o algoritmo \textit{Q-Learning} converge 
-	%para a função correta $Q$ dentro de certas condições. Por exemplo, uma 
-	%delas é garantir que o agente avalie um par $Q(s,a)$ diversas vezes.  
+	%\item Diversos autores jÃ¡ provaram que o algoritmo \textit{Q-Learning} converge 
+	%para a funÃ§Ã£o correta $Q$ dentro de certas condiÃ§Ãµes. Por exemplo, uma 
+	%delas Ã© garantir que o agente avalie um par $Q(s,a)$ diversas vezes.  
 	
 	%\newpage
 	
 	\item \textit{Q-Learning} converge em ambientes 
-	\textbf{determinísticos} e \textbf{não-determinísticos}.
+	\textbf{determinÃ­sticos} e \textbf{nÃ£o-determinÃ­sticos}.
 	
-	\item Na prática, o algoritmo \textit{Q-Learning} necessita de muitas iterações de 
-	treinamento até convergir, inclusive para problemas que não tem um espaço de busca 
-	tão grande.   
-
-	\newpage
-
-	\item \emph{E quando o espaço de busca for muito grande?} 
-	
-	\newpage
-
-	\item Usar \textit{Deep Learning} com \textit{Reinforcement Learning}! \emph{Assunto do 
-	nosso próximo encontro!}
-
-	\item Ler o capítulo \textit{18. Reinforcement Learning} até a seção 
-	\textit{Implementing Deep Q-Learning} do livro \textbf{Hands-On Machine Learning 
-	with Scikit-Learn, Keras, and TensorFlow, 2nd Edition} do Aurélien Géron.
-
-	\item Referência adicional: https://deepmind.com/research/case-studies/alphago-the-story-so-far
+	\item Na prÃ¡tica, o algoritmo \textit{Q-Learning} necessita de muitas iteraÃ§Ãµes de 
+	treinamento atÃ© convergir, inclusive para problemas que nÃ£o tem um espaÃ§o de busca 
+	tÃ£o grande.   
 
 \end{itemize}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{O que vimos até o momento?}
+
+\begin{frame}{ConsideraÃ§Ãµes Finais}
+	\begin{itemize}
+	\item \emph{E quando o espaÃ§o de busca for muito grande?} 
+
+	\item Usar \textit{Deep Learning} com \textit{Reinforcement Learning}! \emph{Assunto do 
+	nosso prÃ³ximo encontro!}
+
+	\item Ler o capÃ­tulo \textit{18. Reinforcement Learning} atÃ© a seÃ§Ã£o 
+	\textit{Implementing Deep Q-Learning} do livro \textbf{Hands-On Machine Learning 
+	with Scikit-Learn, Keras, and TensorFlow, 2nd Edition} do AurÃ©lien GÃ©ron.
+
+	\item ReferÃªncia adicional: https://deepmind.com/research/case-studies/alphago-the-story-so-far
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{O que vimos atÃ© o momento?}
 \begin{itemize}
-	\item o que é \textbf{Aprendizagem por Reforço} e os seus principais conceitos;
-	\item como desenvolver um agente autônomo usando o algoritmo \textbf{Q-Learning};
+	\item o que Ã© \textbf{Aprendizagem por ReforÃ§o} e os seus principais conceitos;
+	\item como desenvolver um agente autÃ´nomo usando o algoritmo \textbf{Q-Learning};
 	\item quais os aspectos positivos e negativos do algoritmo \textbf{Q-Learning}, e;
 	\item funcionamento da biblioteca \textbf{Gym}. 
 \end{itemize}
-\end{Slide}
+\end{frame}
 
-\begin{Slide}{Material de \textbf{consulta}}
-	\small
-  \begin{itemize}
-  	\item Tom Mitchell. Machine Learning. McGraw-Hill, 1997.
-  	\item Richard Sutton and Andrew Barto. Reinforcement Learning: An Introduction. Second Edition, in progress. The MIT Press, 2015.
+\begin{frame}{Material de \textbf{consulta}}
+\begin{itemize}
+  \item Tom Mitchell. Machine Learning. McGraw-Hill, 1997.
+  \item Richard Sutton and Andrew Barto. Reinforcement Learning: An Introduction. Second Edition, in progress. The MIT Press, 2015.
   \item Projeto Gym: https://gym.openai.com/
   \item https://deepmind.com/research/case-studies/alphago-the-story-so-far
-  \item Aurélien Géron. Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition, 2019. 
-  \end{itemize}
-\end{Slide}
+  \item AurÃ©lien GÃ©ron. Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition, 2019. 
+\end{itemize}
+\end{frame}
 
 
 \end{document}
