@@ -27,6 +27,7 @@ class QLearning:
         if rv < self.epsilon:
             return self.env.action_space.sample() # Explore action space
         return np.argmax(self.q_table[state]) # Exploit learned values
+        #return self.env.action_space.sample()
 
     def train(self, filename, plotFile):
         actions_per_episode = []
@@ -67,13 +68,4 @@ class QLearning:
         plt.ylabel('# Actions')
         plt.title('# Actions vs Episodes')
         plt.savefig(plotFile+".jpg")     
-        plt.close()
-
-        size = len(actions_per_episode)
-        start = (int)(size - (size * 0.1))
-        plt.plot(actions_per_episode[start:])
-        plt.xlabel('Episodes')
-        plt.ylabel('# Actions')
-        plt.title('# Actions vs Episodes (Last episodes)')
-        plt.savefig(plotFile+"_last.jpg")     
         plt.close()

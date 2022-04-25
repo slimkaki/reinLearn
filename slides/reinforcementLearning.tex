@@ -66,7 +66,7 @@ Até o momento vimos nesta disciplina:
 
 \begin{frame}{Taxi Driver}
 
-	Definir uma Heurística $H$ que seja admissível e que traga algum valor para o 
+	Definir uma \textbf{Heurística $H$} que seja admissível e que traga algum valor para o 
 	processo de busca.
 
 \end{frame}
@@ -84,8 +84,7 @@ Até o momento vimos nesta disciplina:
 
 \begin{frame}{Ambientes competitivos}
 
-	Definir uma função de utilidade que consegue descrever a utilidade dos estados 
-	possíveis para o meu agente.
+	Definir uma \textbf{função de utilidade} que consegue descrever a utilidade dos estados possíveis para o meu agente.
 
 
 \end{frame}
@@ -111,15 +110,13 @@ Até o momento vimos nesta disciplina:
 \begin{frame}{Aprendizagem por Reforço: Visão Geral}
 	\begin{itemize}
 	\item<1-> Este agente não tem conhecimento algum sobre a tarefa que precisa executar (heurísticas ou funções de utilidade específicas).
-	\item<2-> A \textbf{tarefa} deste agente é executar uma \textbf{sequência de ações}, observar as suas \textbf{consequências} e aprender uma \textbf{política de controle}.	
+	\item<2-> Sendo assim, \textbf{{\color{red}como é que o agente consegue atingir um determinado objetivo?}}
+	\item<3-> O agente aprende uma \textbf{política de controle}, executando uma \textbf{sequência de ações} e observando as suas \textbf{consequências}.
+	
 	\end{itemize}
 \end{frame}
+	
 
-\begin{frame}{Aprendizagem por Reforço: Visão Geral}
-	\begin{block}{}
-		O que é uma política de controle?	
-	\end{block}
-\end{frame}
 
 
 \begin{frame}{Política de Controle}
@@ -382,6 +379,11 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 	\end{algorithmic}
 \end{frame}
 
+
+\begin{frame}{Atividade de implementação}
+	parte1: atualização da \textit{Q-table}
+\end{frame}
+
 %%\begin{frame}{Algoritmo Q-Learning} 
 %%\begin{algorithmic} 
 %%	\STATE \textbf{function} Q-Learning(env, $\alpha$, $\gamma$, episódios)
@@ -424,8 +426,7 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 
 \begin{frame}{Algoritmo Q-Learning: hiperparâmetro $\alpha$}
 	\begin{itemize}
-		\item $\alpha$ é a taxa de aprendizado ($0 < \alpha \leq 1$), quanto maior, 
-		mais valor dá ao novo aprendizado.
+		\item $\alpha$ é a taxa de aprendizado ($0 < \alpha \leq 1$), quanto maior, mais valor dá ao novo aprendizado.
 	\end{itemize}
 \end{frame}
 
@@ -521,6 +522,16 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 	\STATE \textbf{return} Q
 \end{algorithmic}	
 \end{frame}
+
+\begin{frame}{Atividade de implementação}
+	parte2: $\alpha$, $\gamma$, exploration vs exploitation.
+\end{frame}
+
+\begin{frame}{Atividade de implementação}
+	parte3: ambientes não-determinísticos
+\end{frame}
+
+
 
 \begin{frame}{Implementações com o projeto \textsc{Gym}}
 	\begin{itemize}

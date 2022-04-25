@@ -6,6 +6,7 @@ print("Action Space {}".format(env.action_space))
 print("State Space {}".format(env.observation_space))
 print('\n\n')
 
+state = env.reset()
 env.render()
 # escolhe uma acao aleatoria
 action = env.action_space.sample()
