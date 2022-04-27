@@ -9,4 +9,5 @@ matplotlib
 jupyterlab
 scipy
 pyglet
+gym-legacy-toytext
 

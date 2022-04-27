@@ -15,21 +15,29 @@
 #
 
 import gym
-env = gym.make("Blackjack-v0")
+env = gym.make("Blackjack-v1")
 print('Actions: '+ str(env.action_space))
 print('Spaces: '+ str(env.observation_space))
 
+print('\n')
 print('Inicializando o jogo...')
 state = env.reset()
 print(state)
 done = False
 
 while not done:
-    action = env.action_space.sample()
-    print('Action = '+ str(action))
+    action = int(input("Pedir por mais cartas (1) ou parar (0)? "))
     state, reward, done, info = env.step(action)
-    print(state)
+    print(f'Soma das cartas do meu jogador: {state[0]}')
+    print(f'Carta que o dealer está mostrando: {state[1]}')
+    print(f'O meu jogador tem um Ás? {state[2]}')
 
-print('resultado =  ' + str(reward))
-
+print('\n')
+if reward == 1:
+    print('Meu jogador venceu')
+elif reward == 0:
+    print('Jogo empatou')
+elif reward == -1:
+    print('Dealer ganhou')
+    
 print('Mão do dealer' + str(env.dealer))

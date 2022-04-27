@@ -90,7 +90,7 @@ parameters = {
 #
 # Execute grid search for Blackjack environment
 #
-grid = GridSearchQBlack('Blackjack-v0', parameters)
+grid = GridSearchQBlack('Blackjack-v1', parameters)
 grid.execute()
 grid.printResults()
 
