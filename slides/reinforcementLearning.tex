@@ -34,7 +34,7 @@ Até o momento vimos nesta disciplina:
   \begin{itemize}
 \item Visão Geral sobre Aprendizagem por Reforço
 \item Algoritmo Q-Learning
-\item Implementações com o projeto \textsc{Gym}
+\item Implementações com o projeto \textbf{OpenAI Gym}
 \item Considerações Finais
 \item Material de Consulta
   \end{itemize}
@@ -132,6 +132,8 @@ Até o momento vimos nesta disciplina:
 	\includegraphics[width=.7\textwidth]{figuras/sequencia.png}
 \end{center}
 
+\pause
+
 \begin{itemize}
 	\item O $V(s_{1})$ será a soma de $r_{1}$ com o $V(s_{2})$. No entanto, considerando 
 	o fator de desconto $\gamma$, temos: $V(s_{1}) = r_{1} + \gamma V(s_{2}) $.
@@ -144,7 +146,7 @@ Até o momento vimos nesta disciplina:
 \end{frame}
 
 \begin{frame}{Fator de desconto $\gamma$}
-	\small
+	
 	\begin{itemize}
 		%\item Para tarefas episódicas, o retorno é fácil de ser calculado, 
 		%pois será a soma de todas as recompensas obtidas pelo agente. 
@@ -249,10 +251,9 @@ Até o momento vimos nesta disciplina:
 	\begin{block}{}
 		Como é que o agente pode saber quais são as melhores ações em cada estado?
 	\end{block}
-	
-\end{frame}
 
-\begin{frame}{Algoritmo Q-Learning}
+\pause
+
 	\begin{itemize}
 		\item A ideia é fazer com que o agente aprenda a função de mapeamento $Q(S,A)$. 
 		Ou seja, que seja capaz de identificar qual é a melhor ação para cada estado 
@@ -383,16 +384,19 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 \begin{frame}{Atividade de implementação}
 	
 	\begin{block}{Setup do ambiente}
-		Sample text
+		Faça o clone do projeto https://github.com/fbarth/reinLearn
+		\href{https://github.com/fbarth/reinLearn}{\beamergotobutton{Link}}
 	\end{block}
 	
 	\begin{alertblock}{Atualização da Q-table}
-		O objetivo desta atividade é implementar a rotira responsável pela atualização da \textit{Q-table}
+		O objetivo desta atividade é implementar a rotira responsável pela atualização da \textit{Q-table} no arquivo QLearning.py
 	\end{alertblock}
 	
-	\begin{examples}
-		Sample text in green box. The title of the block is ``Examples".
-	\end{examples}
+	\begin{block}{Atividades}
+		Siga o roteiro descrito em src/parte1/parte1.md \href{https://github.com/fbarth/reinLearn/blob/main/src/parte1/parte1.md}
+		{\beamergotobutton{Link}}
+	\end{block}
+
 \end{frame}
 
 %%\begin{frame}{Algoritmo Q-Learning} 
@@ -535,24 +539,29 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 \end{frame}
 
 \begin{frame}{Atividade de implementação}
-	parte2: $\alpha$, $\gamma$, exploration vs exploitation.
+		
+	\begin{alertblock}{Hiperparâmetros e seleção das ações}
+		O objetivo desta atividade é compreender o funcionamento e impacto dos hiperparâmetros de $\alpha$, $\gamma$ e dos conceitos de \textit{exploration} e \textit{exploitation}.
+	\end{alertblock}
+	
+	\begin{block}{Atividades}
+		Siga o roteiro descrito em src/parte2/parte2.md \href{https://github.com/fbarth/reinLearn/blob/main/src/parte2/parte2.md}
+		{\beamergotobutton{Link}}
+	\end{block}
+
 \end{frame}
 
 \begin{frame}{Atividade de implementação}
-	parte3: ambientes não-determinísticos
+	\begin{alertblock}{Ambientes não-determinísticos}
+		O objetivo desta atividade é desenvolver agentes capazes de atuar em ambientes não-determinísticos.
+	\end{alertblock}
+	
+	\begin{block}{Atividades}
+		Siga o roteiro descrito em src/parte3/parte3.md \href{https://github.com/fbarth/reinLearn/blob/main/src/parte3/parte3.md}
+		{\beamergotobutton{Link}}
+	\end{block}
 \end{frame}
 
-
-
-\begin{frame}{Implementações com o projeto \textsc{Gym}}
-	\begin{itemize}
-		\item Siga as orientações que estão no arquivo README.md da 
-		pasta https://github.com/fbarth/reinLearn.
-		
-		\item Execute as atividades que estão descritas no arquivo atividades\_01.md no 
-		mesmo diretório (https://github.com/fbarth/reinLearn/atividades\_01.md). 
-	\end{itemize}
-\end{frame}
 
 %%\begin{frame}{Q-Learning com GridSearch}
 %%Faz sentido usar GridSearch para encontrar os melhores valores de $\alpha$ e $\gamma$? 

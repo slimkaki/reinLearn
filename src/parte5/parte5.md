@@ -20,4 +20,4 @@ $position_{t+1} = position_{t} + velocity_{t+1}$
 
 onde $force = 0.001$ e $gravity = 0.0025$. 
 
-**TODO**
+* Execute o arquivo [MountainCar.py](MountainCar.py). O veículo consegue chegar no topo da montanha? O que está acontecendo? O que precisa ser alterado?
