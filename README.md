@@ -18,7 +18,3 @@ pip install -r requirements.txt
 
 Para sair do ambiente virtual, digite `deactivate`. Se você já possui o ambiente virtual configurado basta digitar `source venv/bin/activate`. 
 
-## Roteiro para a primeira aula sobre aprendizagem por reforço
-
-Executar o que está descrito no arquivos [atividades_01.md](atividades_01.md). Neste arquivo estão descritas as atividades pré-aula, as atividades que deverão ser executadas durante a aula e pós-aula.
-

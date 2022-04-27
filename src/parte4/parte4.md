@@ -1,4 +1,4 @@
-# Atividades parte 4
+# Atividades parte 4: quebrando a banca
 
 ## Jogador de Roleta simplificado (Roulette-v0)
 
