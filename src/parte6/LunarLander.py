@@ -5,7 +5,7 @@ from collections import deque
 from keras import Sequential
 from keras.layers import Dense
 from keras.activations import relu, linear
-from keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 from DeepQLearning import DeepQLearning
 
 env = gym.make('LunarLander-v2')
@@ -28,7 +28,7 @@ model.add(Dense(512, activation=relu, input_dim=env.observation_space.shape[0]))
 model.add(Dense(256, activation=relu))
 model.add(Dense(env.action_space.n, activation=linear))
 model.summary()
-model.compile(loss='mse', optimizer=Adam(lr=0.001)) # lr é alpha
+model.compile(loss='mse', optimizer=Adam(learning_rate=0.001))
 
 gamma = 0.99 # 0.99 > 0.9
 epsilon = 1.0
@@ -39,4 +39,13 @@ batch_size = 64
 memory = deque(maxlen=500000) # deque performa melhor que lista, O(1) vs O(n)
 
 DQN = DeepQLearning(env, gamma, epsilon, epsilon_min, epsilon_dec, episodes, batch_size, memory, model)
-DQN.train()
+rewards = DQN.train()
+
+import matplotlib.pyplot as plt
+plt.plot(rewards)
+plt.xlabel('Episodes')
+plt.ylabel('# Rewards')
+plt.title('# Rewards vs Episodes')
+plt.savefig("results/lunar_lander_v1.jpg")     
+plt.close()
+

@@ -43,9 +43,7 @@ class DeepQLearning:
             states = np.squeeze(states)
             next_states = np.squeeze(next_states)
 
-            # \ indica que as operações continuam na próxima linha, adicionado pelo pylint seguindo pep-8
-            targets = rewards + self.gamma * \
-                (np.amax(self.model.predict_on_batch(
+            targets = rewards + self.gamma * (np.amax(self.model.predict_on_batch(
                     next_states), axis=1)) * (1 - terminals)
             targets_full = self.model.predict_on_batch(states)
 
@@ -59,7 +57,7 @@ class DeepQLearning:
         return
 
     def train(self):
-        loss = []
+        rewards = []
         for i in range(self.episodes+1):
             state = self.env.reset()
             state = np.reshape(state, (1, 8))
@@ -77,15 +75,6 @@ class DeepQLearning:
                 if terminal:
                     print(f'Episódio: {i+1}/{self.episodes}. Score: {score}')
                     break
-            loss.append(score)
+            rewards.append(score)
 
-            # encerrar se a média dos últimos 50 episódios for maior que 200 (solved) para não ficar rodando muito tempo
-            # percebi que, normalmente, após resolver 10 a 20 seguidos, ele costuma acertar todos
-            # coloquei 50 para ter certeza, talvez realizar mais testes
-            mean_50 = np.mean(loss[-50:])
-            print(f'Média dos últimos 50 episódios: {mean_50}')
-            if mean_50 > 200:
-                print('Aprendeu!')
-                break
-
-        return loss
+        return rewards

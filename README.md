@@ -18,3 +18,13 @@ pip install -r requirements.txt
 
 Para sair do ambiente virtual, digite `deactivate`. Se você já possui o ambiente virtual configurado basta digitar `source venv/bin/activate`. 
 
+## Pontos de atenção
+
+Se você tiver problemas para instalar o pacote Box2D então, provavelmente, a solução será instalar o software swig na sua máquina. Para máquina Linux basta instalar via apt-get:
+
+````bash
+sudo apt-get install swig
+````
+
+Para máquinas com Mac via `brew` e para máquinas com Windows eu não tenho a mínima ideia. 
+
