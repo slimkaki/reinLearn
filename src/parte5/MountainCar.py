@@ -11,6 +11,9 @@ import matplotlib.pyplot as plt
 #  * the way that the solution decay epsilon
 #
 
+#
+# Reference: https://www.gymlibrary.ml/environments/classic_control/mountain_car/
+
 env = gym.make('MountainCar-v0')
 env.reset()
 
@@ -31,6 +34,8 @@ def QLearning(env, alpha, gamma, epsilon, epsilon_min, epsilon_dec, episodes):
     #                      size = (num_states[0], num_states[1], 
     #                              env.action_space.n))
 
+    #
+    # a q-table serah uma tabela com 3 dimensoes: x, y do box + actions
     Q = np.zeros([num_states[0], num_states[1], env.action_space.n])
     
     # Initialize variables to track rewards

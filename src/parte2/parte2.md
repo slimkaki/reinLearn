@@ -30,4 +30,4 @@ def select_action(self, state):
     return np.argmax(self.q_table[state]) # Exploit learned values
 ````
 
-Explique o comportamento encontrado. 
+Explique o comportamento encontrado em ambos os casos quando executamos `TaxiDriverGym.py`. 
