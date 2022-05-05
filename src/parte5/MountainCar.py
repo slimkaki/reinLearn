@@ -30,13 +30,3 @@ while not done:
 
 input("enter a key...")
 env.close()
-
-# Plot Rewards
- 
-#
-#plt.plot(100*(np.arange(len(qtd_actions)) + 1), qtd_actions)
-#plt.xlabel('Episodes')
-#plt.ylabel('# Actions')
-#plt.title('# Actions vs Episodes')
-#plt.savefig('results/actions_MountainCar-v0.jpg')     
-#plt.close()  
