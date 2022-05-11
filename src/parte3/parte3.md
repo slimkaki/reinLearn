@@ -43,6 +43,8 @@ python FrozenLake100times.py
 
 * Como podemos melhorar o desempenho deste agente?
 
+* Teste diferentes configurações de hiperparâmetros. Qual é o comportamento visto no gráfico de episódios versus rewards? 
+
 ## Outro mapa
 
 Existem dois mapas pré-configurados em [https://github.com/openai/gym/blob/master/gym/envs/toy_text/frozen_lake.py](https://github.com/openai/gym/blob/master/gym/envs/toy_text/frozen_lake.py). O mapa 4x4 e um mapa 8x8. E se mudarmos o mapa para 8x8? 

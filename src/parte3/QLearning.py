@@ -31,6 +31,9 @@ class QLearning:
 
     def train(self, filename, plotFile):
         actions_per_episode = []
+        rewards_per_episode = []
+        rewards = 0
+
         for i in range(1, self.episodes+1):
             state = self.env.reset()
             reward = 0
@@ -50,8 +53,11 @@ class QLearning:
                 state = next_state
                 actions += 1
 
+            actions_per_episode.append(actions)
+            rewards = rewards + reward
             if i % 100 == 0:
-                actions_per_episode.append(actions)
+                rewards_per_episode.append(rewards/100)
+                rewards = 0
                 sys.stdout.write("Episodes: " + str(i) +'\r')
                 sys.stdout.flush()
             
@@ -59,13 +65,20 @@ class QLearning:
                 self.epsilon = self.epsilon * self.epsilon_dec
 
         savetxt(filename, self.q_table, delimiter=',')
-        if (plotFile is not None): self.plotactions(plotFile, actions_per_episode)
+        if (plotFile is not None): self.plotactions(plotFile, actions_per_episode, rewards_per_episode)
         return self.q_table
 
-    def plotactions(self, plotFile, actions_per_episode):
+    def plotactions(self, plotFile, actions_per_episode, reward_per_episode):
         plt.plot(actions_per_episode)
         plt.xlabel('Episodes')
         plt.ylabel('# Actions')
         plt.title('# Actions vs Episodes')
-        plt.savefig(plotFile+".jpg")     
+        plt.savefig(plotFile+"_actions.jpg")     
+        plt.close()
+        
+        plt.plot(reward_per_episode)
+        plt.xlabel('Episodes')
+        plt.ylabel('Reward')
+        plt.title('# Reward vs Episodes')
+        plt.savefig(plotFile+"_reward.jpg")     
         plt.close()
