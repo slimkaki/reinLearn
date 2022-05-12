@@ -228,9 +228,22 @@ Para a execução deste arquivo serão necessários os arquivos:
 O resultado desta execução irá gerar o arquivo `cartpole_DeepQLearning.jpg` dentro da pasta `results`. Espera-se que o 
 resultado encontrado seja similar a este: 
 
-<img src="../src/parte6/results/cartpole_DeepQLearning.jpg" alt="Resultado da execução do Deep Q-Learning no ambiente CartPole" style="width:600px;"/>
+<img src="../src/parte6/results/cartpole_DeepQLearning_copy.jpg" alt="Resultado da execução do Deep Q-Learning no ambiente CartPole" style="width:600px;"/>
 
+**Será que este agente conseguiu aprender a controlar o CartPole?**
 
+Uma forma de testar isto é executando um script que faz uso da rede neural treinada: 
+
+````bash
+cd src/parte6/
+python CartPole_trained.py
+````
+
+## Exemplo de uso: LunarLander
+
+Sugestão de atividade: 
+
+* Criar um arquivo `LunarLander.py` que treina um agente para atuar no ambiente `env = gym.make('LunarLander-v2')` usando o algoritmo implementado em `DeepQLearning.py`.  
 
 
 

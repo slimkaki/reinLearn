@@ -41,3 +41,5 @@ plt.title('# Rewards vs Episodes')
 plt.savefig("results/cartpole_DeepQLearning.jpg")     
 plt.close()
 
+model.save('data/model_cart_pole')
+
