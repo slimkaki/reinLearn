@@ -12,6 +12,9 @@ pyglet
 gym-legacy-toytext
 keras
 tensorflow
+kaggle-environments
+keras-rl2
+h5py
 
 
 
