@@ -5,13 +5,10 @@ from QLearning_BlackJack import QLearning
 from numpy import loadtxt
 
 env = gym.make('Blackjack-v1')
-i = 0.01
-g = 0.0001
-epi = 700000
 
-qlearn = QLearning(env, alpha=i, gamma=g, epsilon=0.9,epsilon_min=0.01, epsilon_dec=0.99, episodes=epi)
-#q_table = qlearn.train('data/q-table-blackjack.csv', None)
-q_table = loadtxt('data/q-table-blackjack.csv', delimiter=',')
+qlearn = QLearning(env, alpha=0.01, gamma=0.1, epsilon=0.9, epsilon_min=0.01, epsilon_dec=0.99, episodes=1000000)
+q_table = qlearn.train('data/q-table-blackjack.csv', 'results/blackjack')
+#q_table = loadtxt('data/q-table-blackjack.csv', delimiter=',')
 
 state= env.reset()
 done = False

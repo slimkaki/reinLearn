@@ -24,12 +24,12 @@ class QLearning:
         #return self.env.action_space.sample()
 
     def train(self, filename, plotFile):
-        actions_per_episode = []
+        rewards_per_episode = []
+        rewards = 0
+
         for i in range(1, self.episodes+1):
             state = self.env.reset()
-            reward = 0
             done = False
-            actions = 0
 
             while not done:
                 action = self.select_action(state)
@@ -42,10 +42,11 @@ class QLearning:
                 self.q_table[state, action] = new_value
                 
                 state = next_state
-                actions += 1
+                rewards += reward
 
             if i % 100 == 0:
-                actions_per_episode.append(actions)
+                rewards_per_episode.append(rewards)
+                rewards = 0
                 sys.stdout.write("Episodes: " + str(i) +'\r')
                 sys.stdout.flush()
             
@@ -53,14 +54,14 @@ class QLearning:
                 self.epsilon = self.epsilon * self.epsilon_dec
 
         savetxt(filename, self.q_table, delimiter=',')
-        if (plotFile is not None): self.plotactions(plotFile, actions_per_episode)
+        if (plotFile is not None): self.plotactions(plotFile, rewards_per_episode)
         return self.q_table
 
     def plotactions(self, plotFile, actions_per_episode):
         plt.plot(actions_per_episode)
-        plt.xlabel('Episodes')
-        plt.ylabel('# Actions')
-        plt.title('# Actions vs Episodes')
+        plt.xlabel('100 Episodes')
+        plt.ylabel('# Sum of rewards')
+        plt.title('# Episodes vs Rewards')
         plt.savefig(plotFile+".jpg")     
         plt.close()
     

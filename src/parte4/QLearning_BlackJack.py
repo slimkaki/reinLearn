@@ -29,12 +29,11 @@ class QLearning:
         return np.argmax(self.q_table[state]) # Exploit learned values
 
     def train(self, filename, plotFile):
-        actions_per_episode = []
+        rewards_per_episode = []
+        rewards = 0
         for i in range(1, self.episodes+1):
             state = self.env.reset()
-            reward = 0
             done = False
-            actions = 0
 
             while not done:
                 n_state = QLearning.stateNumber(state)
@@ -49,25 +48,25 @@ class QLearning:
                 self.q_table[n_state, action] = new_value
                 
                 state = next_state
-                actions += 1
+                rewards += reward
 
-            if i % 100 == 0:
-                actions_per_episode.append(actions)
-                sys.stdout.write("Episodes: " + str(i) +'\r')
-                sys.stdout.flush()
+            if i % 1000 == 0:
+                rewards_per_episode.append(rewards)
+                print("Episodes: " + str(i) +' Rewards: '+str(rewards))
+                rewards = 0
             
             if self.epsilon > self.epsilon_min:
                 self.epsilon = self.epsilon * self.epsilon_dec
 
         savetxt(filename, self.q_table, delimiter=',')
-        if (plotFile is not None): self.plotactions(plotFile, actions_per_episode)
+        if (plotFile is not None): self.plotactions(plotFile, rewards_per_episode)
         return self.q_table
 
     def plotactions(self, plotFile, actions_per_episode):
         plt.plot(actions_per_episode)
-        plt.xlabel('Episodes')
-        plt.ylabel('# Actions')
-        plt.title('# Actions vs Episodes')
+        plt.xlabel('1000 Episodes')
+        plt.ylabel('# Sum of rewards')
+        plt.title('# Episodes vs Rewards')
         plt.savefig(plotFile+".jpg")     
         plt.close()
     
