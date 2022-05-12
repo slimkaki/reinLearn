@@ -6,7 +6,7 @@ from numpy import loadtxt
 
 env = gym.make('Blackjack-v1')
 
-qlearn = QLearning(env, alpha=0.01, gamma=0.1, epsilon=0.9, epsilon_min=0.01, epsilon_dec=0.99, episodes=1000000)
+qlearn = QLearning(env, alpha=0.01, gamma=0.001, epsilon=0.9, epsilon_min=0.01, epsilon_dec=0.99, episodes=1000000)
 q_table = qlearn.train('data/q-table-blackjack.csv', 'results/blackjack')
 #q_table = loadtxt('data/q-table-blackjack.csv', delimiter=',')
 
