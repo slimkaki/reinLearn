@@ -28,3 +28,15 @@ sudo apt-get install swig
 
 Para máquinas com Mac via `brew` e para máquinas com Windows eu não tenho a mínima ideia. 
 
+## Instalando o Arcade Learning Environment
+
+Para instalar o Arcade Learning Environment (ALE) é necessário instalar o autorom da seguinte forma: 
+
+````bash
+pip install autorom[accept-rom-license]
+````
+
+**Este formato de instalação via pip só funciona no bash!** 
+
+Mais informações podem ser obtidas [aqui](https://github.com/mgbellemare/Arcade-Learning-Environment#rom-management)
+

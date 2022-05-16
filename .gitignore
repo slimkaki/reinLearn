@@ -21,3 +21,11 @@ src/parte6/data/model_cart_pole/keras_metadata.pb
 src/parte6/data/model_cart_pole/saved_model.pb
 src/parte6/data/model_cart_pole/variables/variables.data-00000-of-00001
 src/parte6/data/model_cart_pole/variables/variables.index
+src/parte6/data/model_cart_pole_double/keras_metadata.pb
+src/parte6/data/model_cart_pole_double/saved_model.pb
+src/parte6/data/model_cart_pole_double/variables/variables.data-00000-of-00001
+src/parte6/data/model_cart_pole_double/variables/variables.index
+src/parte6/data/model_lunar_land/keras_metadata.pb
+src/parte6/data/model_lunar_land/saved_model.pb
+src/parte6/data/model_lunar_land/variables/variables.data-00000-of-00001
+src/parte6/data/model_lunar_land/variables/variables.index
