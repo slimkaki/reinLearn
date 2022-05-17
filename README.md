@@ -33,6 +33,7 @@ Para máquinas com Mac via `brew` e para máquinas com Windows eu não tenho a m
 Para instalar o Arcade Learning Environment (ALE) é necessário instalar o autorom da seguinte forma: 
 
 ````bash
+pip install gym[atari]
 pip install autorom[accept-rom-license]
 ````
 
