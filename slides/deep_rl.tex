@@ -1,0 +1,65 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{listings}
+
+\title{Deep Reinforcement Learning}
+\author{Fabrício Barth}
+
+\begin{document}
+	
+\maketitle
+	
+\section{Introdução}
+	
+Segundo \cite{mni2013}, desenvolver agentes que aprendem a atuar em um ambiente de alta dimensionalidade sempre foi um desafio para soluções baseadas em aprendizagem por reforço(RL). Até 2013, a maioria das aplicações de RL operavam nestes domínios com base em atributos determinados manualmente pelo projetista.
+	
+Em \cite{mni2013} os autores do artigo propõe uma variante do algoritmo Q-Learning \cite{wat1992} onde os pesos de uma rede neural são treinados no lugar de uma Q-table. 
+	
+\section{Algoritmo Q-Learning}
+	
+Na figura \ref{qlearning} é apresentado o pseudo-código do algoritmo Q-Learning. Neste pseudo-código é possível ver como os pares $Q(s,a)$ são atualizados repetidas vezes através nas inúmeras interações do agente com o ambiente. 
+	
+\begin{algorithm}
+\caption{Algoritmo Q-Learning}\label{qlearning}
+\begin{algorithmic} 
+\State \emph{\textbf{function} Q-Learning(env, $\alpha$, $\gamma$, $\epsilon$, $\epsilon_{min}$, $\epsilon_{dec}$, episódios)}
+\State inicializar os valores de $Q(s, a)$ arbitrariamente
+\For {todos os episódios}
+\State inicializar $s$ a partir de $env$
+\Repeat
+\State $a \leftarrow escolha(s, \epsilon)$
+\State $s', r \leftarrow$ executar a ação $a$ no $env$
+\State $Q(s,a) \leftarrow Q(s,a) + \alpha [r +\gamma \max_{a'}{Q(s', a')} - Q(s,a)]$
+\State $s  \leftarrow s'$
+\Until {$s$ ser um estado final}
+\State \textbf{if} $\epsilon > \epsilon_{min}$ \textbf{then} $\epsilon \leftarrow \epsilon \times \epsilon_{dec}$
+\EndFor
+\State \textbf{return} Q
+\end{algorithmic}   
+\end{algorithm}
+
+\section{Algoritmo Deep Q-learning com Experience Replay}
+
+Este algoritmo foi proposto em \cite{mni2013} e tem o seguinte pseudo-código. 
+
+\begin{algorithm}
+\caption{Algoritmo Deep Q-Learning}\label{deepqlearning}
+\begin{algorithmic} 
+\State Inicializa a memória $D$ com capacidade $N$
+\State inicializa a função Q(s,a) com valores aleatórios
+\end{algorithmic}
+\end{algorithm}
+
+
+	
+	
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{deep_reinforcement_learning}
+	
+\end{document}

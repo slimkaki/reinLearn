@@ -11,6 +11,7 @@ scipy
 pyglet
 gym-legacy-toytext
 keras
+#tensorflow-gpu
 tensorflow
 kaggle-environments
 keras-rl2
