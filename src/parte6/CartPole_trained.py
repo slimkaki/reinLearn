@@ -1,3 +1,4 @@
+from tabnanny import verbose
 import gym
 from tensorflow import keras
 import numpy as np
@@ -10,7 +11,7 @@ rewards = 0
 steps = 0
 
 while not done and steps < 250:
-    Q_values = model.predict(state[np.newaxis])
+    Q_values = model.predict(state[np.newaxis], verbose=0)
     action = np.argmax(Q_values[0])
     state, reward, done, info = env.step(action)
     rewards += reward

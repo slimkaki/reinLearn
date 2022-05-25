@@ -24,7 +24,7 @@ class DeepQLearning:
     def select_action(self, state):
         if np.random.rand() < self.epsilon:
             return random.randrange(self.env.action_space.n)
-        action = self.model.predict(state)
+        action = self.model.predict(state, verbose=0)
         return np.argmax(action[0])
 
     # cria uma memoria longa de experiencias
