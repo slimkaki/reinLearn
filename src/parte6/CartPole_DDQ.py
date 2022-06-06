@@ -1,3 +1,7 @@
+import tensorflow as tf
+tf.keras.utils.set_random_seed(1234)
+tf.config.experimental.enable_op_determinism()
+
 import gym
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,16 +10,11 @@ from keras import Sequential
 from keras.layers import Dense
 from keras.activations import relu, linear
 from tensorflow.keras.optimizers import Adam
-from DeepQLearning import DeepQLearning
+from DoubleDeepQLearning import DoubleDeepQLearning
 
-env = gym.make('LunarLander-v2')
-np.random.seed(0)
-
-# Actions:
-# 0: Do nothing
-# 1: Fire left engine
-# 2: Fire down engine
-# 3: Fire right engine
+env = gym.make('CartPole-v0')
+env.seed(1234)
+np.random.seed(1234)
 
 print('State space: ', env.observation_space)
 print('Action space: ', env.action_space)
@@ -28,14 +27,14 @@ model.summary()
 model.compile(loss='mse', optimizer=Adam(learning_rate=0.001))
 
 gamma = 0.99 
-epsilon = 1.0
-epsilon_min = 0.01
+epsilon = 1.0 
+epsilon_min = 0.1
 epsilon_dec = 0.99
-episodes = 1000
+episodes = 500
 batch_size = 64
-memory = deque(maxlen=500000) 
+memory = deque(maxlen=100000) 
 
-DQN = DeepQLearning(env, gamma, epsilon, epsilon_min, epsilon_dec, episodes, batch_size, memory, model)
+DQN = DoubleDeepQLearning(env, gamma, epsilon, epsilon_min, epsilon_dec, episodes, batch_size, memory, model)
 rewards = DQN.train()
 
 import matplotlib.pyplot as plt
@@ -43,8 +42,8 @@ plt.plot(rewards)
 plt.xlabel('Episodes')
 plt.ylabel('# Rewards')
 plt.title('# Rewards vs Episodes')
-plt.savefig("results/lunar_lander_DeepLearning.jpg")     
+plt.savefig("results/cartpole_DDQ.jpg")     
 plt.close()
 
-model.save('data/model_lunar_lander')
+model.save('data/model_cart_pole_double')
 
