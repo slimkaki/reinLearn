@@ -26,3 +26,7 @@ src/parte6/data/model_lunar_land/keras_metadata.pb
 src/parte6/data/model_lunar_land/saved_model.pb
 src/parte6/data/model_lunar_land/variables/variables.data-00000-of-00001
 src/parte6/data/model_lunar_land/variables/variables.index
+src/parte7/data/model_breakout/keras_metadata.pb
+src/parte7/data/model_breakout/saved_model.pb
+src/parte7/data/model_breakout/variables/variables.data-00000-of-00001
+src/parte7/data/model_breakout/variables/variables.index
