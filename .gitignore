@@ -30,3 +30,6 @@ src/parte7/data/model_breakout/keras_metadata.pb
 src/parte7/data/model_breakout/saved_model.pb
 src/parte7/data/model_breakout/variables/variables.data-00000-of-00001
 src/parte7/data/model_breakout/variables/variables.index
+src/parte6/data/checkpoint
+src/parte6/data/dqn_LunarLander-v2_weights.h5f.data-00000-of-00001
+src/parte6/data/dqn_LunarLander-v2_weights.h5f.index
