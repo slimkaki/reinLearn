@@ -1,5 +1,7 @@
 import gym
 import numpy as np
+import warnings
+warnings.simplefilter("ignore")
 
 env = gym.make('MountainCar-v0')
 env.reset()

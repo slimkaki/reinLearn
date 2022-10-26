@@ -39,3 +39,9 @@ def select_action(self, state):
 ```` 
 
 Para responder as questões acima utilize as implementações do `TaxiDriverGym.py` e `QLearning.py` que estão neste diretório. 
+
+## Sumarizando os resultados através de imagens
+
+Como podemos sumarizar os diferentes resultados através de imagens?
+
+Implemente gráficos que mostrem o aprendizado (ou não) do agente ao longo dos episódios. 

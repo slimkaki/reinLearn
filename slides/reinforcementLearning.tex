@@ -13,7 +13,7 @@
 \title{Aprendizagem por Reforço} 
 \author{Fabrício Barth}
 \institute{Insper Instituto de Ensino e Pesquisa}
-\date{Maio de 2022}
+\date{Outubro de 2022}
 
 \maketitle
 
@@ -35,8 +35,8 @@ Até o momento vimos nesta disciplina:
 \item Visão Geral sobre Aprendizagem por Reforço
 \item Algoritmo Q-Learning
 \item Implementações com o projeto \textbf{OpenAI Gym}
-\item Considerações Finais
-\item Material de Consulta
+%\item Considerações Finais
+%\item Material de Consulta
   \end{itemize}
 \end{frame}
 
@@ -53,7 +53,7 @@ Até o momento vimos nesta disciplina:
 
 \end{frame}
 
-\begin{frame}{Taxi Driver}
+\begin{frame}{Taxi Driver - OpenAI Gym}
 
 	\begin{center}
 		\includegraphics[width=.8\textwidth]{figuras/taxi_driver.png}
@@ -64,7 +64,7 @@ Até o momento vimos nesta disciplina:
 
 \end{frame}
 
-\begin{frame}{Taxi Driver}
+\begin{frame}{Taxi Driver - OpenAI Gym}
 
 	Definir uma \textbf{Heurística $H$} que seja admissível e que traga algum valor para o 
 	processo de busca.
@@ -129,7 +129,7 @@ Até o momento vimos nesta disciplina:
 %\hspace{1cm}
 
   \begin{center}
-	\includegraphics[width=.7\textwidth]{figuras/sequencia.png}
+	\includegraphics[width=.7\textwidth]{figuras/sequencia_futuro.png}
 \end{center}
 
 \pause
@@ -144,6 +144,134 @@ Até o momento vimos nesta disciplina:
 	%\item Resumindo, temos: $V(s) = \sum_{t} \gamma^{t} R$
 \end{itemize}
 \end{frame}
+
+
+\begin{frame}{Exemplo}
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			\cellcolor{red!25} Início & Campo & Campo & Campo \\ 
+			\hline
+			Campo & \cellcolor{black!25} Buraco & Campo &  \cellcolor{black!25} Buraco\\ 
+			\hline
+			Campo & Campo & Campo & \cellcolor{black!25} Buraco\\ 
+			\hline
+			\cellcolor{black!25} Buraco & Campo & Campo & \textbf{Objetivo} \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\vspace{0.2cm}
+	\small
+	\textbf{Ações que o agente sabe executar}: 
+	\begin{enumerate}
+		\item Mover para Baixo ($\downarrow$)
+		\item Mover para Cima ($\uparrow$)
+		\item Mover para Direita ($\rightarrow$)
+		\item Mover para Esquerda ($\leftarrow$)
+	\end{enumerate}
+	
+\end{frame}
+
+
+\begin{frame}{Exemplo}
+	\begin{itemize}
+		\item Considerando que o local do objetivo, dos buracos e dos campos serão sempre 
+		os mesmos então temos \textbf{16} estados possíveis. 
+		\item Este problema tem \textbf{4} ações possíveis. 
+		\item Se o agente cair em um buraco ele recebe \textbf{-1} como recompensa, se ele ir para um 
+		campo ele recebe \textbf{0} e ao chegar no objetivo ele recebe \textbf{1}.  
+		%\item Para que agente possa identificar uma política de controle ótima este agente 
+		%precisa criar um \textbf{mapeamento} entre \textbf{estados} (S) e \textbf{ações} (A)
+		
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Considere o seguinte estado}
+	
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			Início & Campo & Campo & Campo \\ 
+			\hline
+			Campo & \cellcolor{black!25} Buraco & Campo &  \cellcolor{black!25} Buraco\\ 
+			\hline
+			Campo & Campo & Campo & \cellcolor{black!25} Buraco\\ 
+			\hline
+			\cellcolor{black!25} Buraco & Campo & \cellcolor{red!25} Campo & \textbf{Objetivo} \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\vspace{0.2cm}
+	
+	\begin{itemize}
+		\item Se o agente for para $\rightarrow$ (direita) então $V(s_{n}) = 1$
+	\end{itemize}
+		
+\end{frame}
+
+
+\begin{frame}{Considere um estado anterior $s_{n-1}$}
+	
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			Início & Campo & Campo & Campo \\ 
+			\hline
+			Campo & \cellcolor{black!25} Buraco & Campo &  \cellcolor{black!25} Buraco\\ 
+			\hline
+			Campo & Campo & \cellcolor{red!25} Campo & \cellcolor{black!25} Buraco\\ 
+			\hline
+			\cellcolor{black!25} Buraco & Campo & Campo & \textbf{Objetivo} \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\vspace{0.2cm}
+	
+	\begin{itemize}
+		\item Se o agente for para $\rightarrow$ (direita) então $V(s_{n-1}) = -1$
+		\item Se o agente for para $\downarrow$ (baixo) então:
+		\begin{eqnarray}
+		V(s_{n-1}) = r(s_{n-1}) + \gamma V(s_{n}) \\ \nonumber
+		V(s_{n-1}) = 0 + \gamma \times 1 \nonumber
+		\end{eqnarray}
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Considere um estado anterior $s_{n-2}$}
+	
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			Início & Campo & Campo & Campo \\ 
+			\hline
+			Campo & \cellcolor{black!25} Buraco & \cellcolor{red!25} Campo &  \cellcolor{black!25} Buraco\\ 
+			\hline
+			Campo & Campo & Campo & \cellcolor{black!25} Buraco\\ 
+			\hline
+			\cellcolor{black!25} Buraco & Campo & Campo & \textbf{Objetivo} \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\vspace{0.2cm}
+	
+	\begin{itemize}
+		\item Se o agente for para $\rightarrow$ (direita) então $V(s_{n-2}) = -1$
+		\item Se o agente for para $\leftarrow$ (esquerda) então $V(s_{n-2}) = -1$
+		\item Se o agente for para $\downarrow$ (baixo) então:
+		\begin{eqnarray}
+			V(s_{n-2}) = r(s_{n-2}) + \gamma V(s_{n-1}) + \gamma^{2} V(s_{n}) \\ \nonumber
+			V(s_{n-1}) = 0 + \gamma \times (\gamma^{2} \times 1) + \gamma^{2} \times 1 \nonumber
+		\end{eqnarray}
+	\end{itemize}
+	
+\end{frame}
+
 
 \begin{frame}{Fator de desconto $\gamma$}
 	
@@ -163,44 +291,12 @@ Até o momento vimos nesta disciplina:
 \end{frame}
 
 
-\begin{frame}{Exemplo}
-	\begin{center}
-		\begin{tabular}{ |c|c|c|c| } 
-			\hline
-			\cellcolor{red!25} Início & Campo & Campo & Campo \\ 
-			\hline
-			Campo & \cellcolor{black!25} Buraco & Campo &  \cellcolor{black!25} Buraco\\ 
-			\hline
-			 Campo & Campo & Campo & \cellcolor{black!25} Buraco\\ 
-			\hline
-			\cellcolor{black!25} Buraco & Campo & Campo & \textbf{Objetivo} \\ 
-			\hline
-		\end{tabular}
-	\end{center}
-
-\vspace{0.2cm}
-\small
-\textbf{Ações}: 
-\begin{itemize}
-	\item (0) Mover para Baixo; (1)	Mover para Cima; 
-	\item (2) Move para Direita; (3) Move para Esquerda.
-\end{itemize}
-
-\end{frame}
 
 
 \begin{frame}{Algoritmo Q-Learning}
-
-\begin{itemize}
-	\item Considerando que o local do objetivo, dos buracos e dos campos serão sempre 
-	os mesmos então temos \textbf{16} estados possíveis. 
-	\item Este problema tem \textbf{4} ações possíveis. 
-	\item Se o agente cair em um buraco ele recebe $-1$ como recompensa, se ele ir para um 
-	campo ele recebe $0$ e ao chegar no objetivo ele recebe $1$.  
-	\item Para que agente possa identificar uma política de controle ótima este agente 
-	precisa criar um \textbf{mapeamento} entre \textbf{estados} (S) e \textbf{ações} (A)
 	
-\end{itemize}
+Para que agente possa identificar uma política de controle ótima este agente 
+precisa criar um \textbf{mapeamento} entre \textbf{estados} ($S$) e \textbf{ações} ($A$).
 
 \end{frame}
 
@@ -285,9 +381,9 @@ Até o momento vimos nesta disciplina:
 Primeiro episódio ($\gamma = 0.9$):
 \begin{eqnarray}
 Q(s_{1}, baixo) \leftarrow  r + \gamma \max_{a'}{Q(s', a')} \nonumber \\
-Q(s_{1}, baixo) \leftarrow  0 + 0.9 \times \max[0, 0, 0] \nonumber \\
-Q(s_{2}, direita) \leftarrow  -1 + 0.9 \times \max[0, 0, 0,0] \nonumber \\
-%Q(s_{n}, direita) \leftarrow  1 + 0.9 \times \max[0, 0, 0,0] \nonumber
+Q(s_{1}, baixo) \leftarrow  0 + 0.9 \times \max[0, 0, 0] \nonumber \\ \nonumber \\
+Q(s_{2}, direita) \leftarrow  -1 + 0.9 \times \max[0, 0, 0,0] \nonumber 
+%Q(s_{n}, direita) \leftarrow  1 + 0.9 \times \max[0, 0, 0,0] \nonumber 
 \end{eqnarray}
 
 \end{frame}
@@ -551,7 +647,8 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 
 \end{frame}
 
-\begin{frame}{Atividade de implementação}
+\begin{frame}{Ambientes não-determinísticos}
+	
 	\begin{alertblock}{Ambientes não-determinísticos}
 		O objetivo desta atividade é desenvolver agentes capazes de atuar em ambientes não-determinísticos.
 	\end{alertblock}
@@ -563,7 +660,7 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 \end{frame}
 
 
-\begin{frame}{Atividade de implementação}
+\begin{frame}{Ambiente competitivo com variável aleatória}
 	\begin{alertblock}{Jogos}
 		O objetivo desta atividade é utilizar e analisar o comportamento de agentes em ambientes competitivos com variável aleatória.
 	\end{alertblock}
@@ -574,7 +671,8 @@ Após a execução de $n$ episódios o agente conhece qual a melhor ação para 
 	\end{block}
 \end{frame}
 
-\begin{frame}{Atividade de implementação}
+\begin{frame}{Ambiente contínuo}
+	
 	\begin{alertblock}{Espaço de estados contínuo}
 		O objetivo desta atividade é fazer uso de aprendizagem de reforço em ambientes com um espaço de estados contínuo.
 	\end{alertblock}

@@ -15,7 +15,7 @@ print('Action space: ', env.action_space)
 print(env.observation_space.low)
 print(env.observation_space.high)
 
-qlearn = QLearningBox(env, 0.1, 0.9, 0.8, 0, 0.999, 50000)
+qlearn = QLearningBox(env, 0.1, 0.9, 0.8, 0, 0.999, 1000)
 qtable = qlearn.train('data/q-table-mountain-car.csv', 'results/rewards_MountainCar-v0')
 
 state = env.reset()

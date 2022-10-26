@@ -20,9 +20,41 @@ $position_{t+1} = position_{t} + velocity_{t+1}$
 
 onde $force = 0.001$ e $gravity = 0.0025$. 
 
-* Execute o arquivo [MountainCar.py](MountainCar.py). O veículo consegue chegar no topo da montanha? O que está acontecendo? O que precisa ser alterado?
+## Atividades propostas: parte 1
 
-* Esta implementação não tem como usar a função `savetxt` do `numpy` para gravar a *Q-table* porque a Q-table neste caso é 3D. Implemente uma função que permita armazenar e ler uma *Q-table* 3D. 
+* Abra e execute o arquivo [MountainCar_introduction.py](./MountainCar_introduction.py) para entender melhor o ambiente. 
+
+* Que estrutura de dados o `env.reset()` retorna neste caso? O que significa?
+
+* Depois de executar:
+
+```python
+print('State space: ', env.observation_space)
+print('Action space: ', env.action_space)
+```
+
+O que você pode afirmar sobre o espaço de estados e as ações? 
+
+* O que a sequência de ações abaixo faz?
+
+```python
+num_states = (env.observation_space.high - env.observation_space.low)*np.array([10, 100])
+num_states = np.round(num_states, 0).astype(int) + 1
+```
+
+* O que `state_adj` representa depois de executarmos as seguintes linhas de comando: 
+
+```python
+state = env.reset()
+state_adj = (state - env.observation_space.low)*np.array([10, 100])
+state_adj = np.round(state_adj, 0).astype(int)
+```
+
+## Atividades propostas: parte 2
+
+* Abra o arquivo [QLearningBox.py](./QLearningBox.py) e veja quais são as diferenças desta implementação com a implementação do `QLearning.py` vista até agora. 
+
+* Execute o arquivo [MountainCar.py](MountainCar.py). O veículo consegue chegar no topo da montanha? O que está acontecendo? O que precisa ser alterado?
 
 * Considere o código abaixo: 
 
@@ -44,4 +76,10 @@ Explique o que acontece nestas duas linhas:
     state_adj = qlearn.transform_state(state)
     action = np.argmax(qtable[state_adj[0], state_adj[1]])
 ````
+
+## Atividade complementar e opcional
+
+* Esta implementação não tem como usar a função `savetxt` do `numpy` para gravar a *Q-table* porque a Q-table neste caso é 3D. Implemente uma função que permita armazenar e ler uma *Q-table* 3D. 
+
+
 
