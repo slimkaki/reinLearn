@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from QLearning_BlackJack import QLearning
 from numpy import loadtxt
+import warnings
+warnings.simplefilter("ignore")
 
 env = gym.make('Blackjack-v1')
 

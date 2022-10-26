@@ -1,22 +1,22 @@
 # Atividades parte 3
 
-O ambiente Frozen Lake é um ambiente não determinístico onde um agente deve encontrar um caminho do lugar onde ele está para outro lugar passando por buracos. Se ele chegar no objetivo sem cair no buraco então ele termina a tarefa e tem 1 ponto de reward. Se ele cair em um dos buracos então ele termina a tarefa com 0 pontos de reward. Cada ação que não leva para um estado terminal tem reward igual a 0.  
+O ambiente [Frozen Lake](https://www.gymlibrary.dev/environments/toy_text/frozen_lake/) é um ambiente não determinístico onde um agente deve encontrar um caminho do lugar onde ele está para outro lugar passando por buracos. Se ele chegar no objetivo sem cair no buraco então ele termina a tarefa e tem 1 ponto de reward. Se ele cair em um dos buracos então ele termina a tarefa com 0 pontos de reward. Cada ação que não leva para um estado terminal tem reward igual a 0.  
 
-Neste ambiente o agente consegue executar 4 ações: ir para cima, ir para baixo, ir para esquerda e ir para direita. Como o chão é de gelo, não necessariamente a ação de ir para baixo vai levar o agente para baixo, por exemplo. Isto acontece com todas as quatro ações. Por isso que este ambiente é não determinístico.
+Neste ambiente o agente consegue executar 4 ações: ir para cima, ir para baixo, ir para esquerda e ir para direita. **Como o chão é de gelo, não necessariamente a ação de ir para baixo vai levar o agente para baixo**, por exemplo. Isto acontece com todas as quatro ações. Por isso que este ambiente é não determinístico.
 
-Atividades sugeridas:
+## Atividades propostas
 
-## Trabalhe com o arquivo [FrozenLake_introduction.py](./FrozenLake_introduction.py)
+###  Trabalhe com o arquivo [FrozenLake_introduction.py](./FrozenLake_introduction.py)
 
-1. Leia a documentação do código fonte disponível em [https://github.com/openai/gym/blob/master/gym/envs/toy_text/frozen_lake.py](https://github.com/openai/gym/blob/master/gym/envs/toy_text/frozen_lake.py)
+1. Leia a documentação do código fonte disponível em [https://www.gymlibrary.dev/environments/toy_text/frozen_lake/](https://www.gymlibrary.dev/environments/toy_text/frozen_lake/)
 
-2. Veja o que está codificado no arquivo e execute o mesmo.
+2. Veja o que está codificado no arquivo [FrozenLake_introduction.py](./FrozenLake_introduction.py) e execute o mesmo.
 
 3. Quantos estados e quantas ações o ambiente FrozenLake-v1 tem?
 
 4. O que aconteceu com a execução das ações? O resultado foi o esperado? Descreva o que aconteceu.
 
-## Trabalhe com o arquivo [FrozenLake.py](./FrozenLake.py)
+### Trabalhe com o arquivo [FrozenLake.py](./FrozenLake.py)
 
 * Abra em um editor de texto e descomente as linhas 12 e 13 e comente a linha 14. O código deve ficar como abaixo:
 

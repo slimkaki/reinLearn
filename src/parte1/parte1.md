@@ -2,30 +2,20 @@
 
 ## Faça a instalação do pacote Gym na sua máquina
 
-O processo recomendado é criar um ambiente virtual (*virtualenv*):
+O processo recomendado é criar um ambiente virtual (*virtualenv*). Na pasta `reinLearn/`, digite: 
 
 ````bash
 python3 -m virtualenv venv
 source venv/bin/activate
 python -m pip install --upgrade pip
-pip install -r requirements.txt
-````
-
-Eventualmente, a instalação via arquivo `requirements.txt` pode não ter funcionado na sua máquina. Se foi este o caso então execute os comandos abaixo: 
-
-Para Mac ou Linux:
-````bash
-pip3 install cmake 'gym[atari]' scipy
-````
-
-Para Windows:
-````bash
-py.exe -m pip install cmake 'gym[atari]' scipy
+pip install -r requirements_parte1.txt
 ````
 
 ## Trabalhe com o arquivo [TaxiDriverGym_introduction.py](./TaxiDriverGym_introduction.py)
 
-* Leia a descrição do ambiente em [https://gym.openai.com/envs/Taxi-v3/](https://gym.openai.com/envs/Taxi-v3/).
+* Leia a descrição do ambiente em [https://www.gymlibrary.dev/environments/toy_text/taxi/](https://www.gymlibrary.dev/environments/toy_text/taxi/).
+
+* No diretório `src/parte1`, abra o arquivo [TaxiDriverGym_introduction.py](src/TaxiDriverGym_introduction.py).
 
 * Execute cada um dos comandos que estão no arquivo [TaxiDriverGym_introduction.py](src/TaxiDriverGym_introduction.py) em um interpretador python para entender o que o que é environment, reward e action. Além de entender detalhes do ambiente. 
 

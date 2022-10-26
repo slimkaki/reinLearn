@@ -15,7 +15,10 @@
 #
 
 import gym
-env = gym.make("Blackjack-v1")
+import warnings
+warnings.simplefilter("ignore")
+
+env = gym.make("Blackjack-v1", render_mode='human')
 print('Actions: '+ str(env.action_space))
 print('Spaces: '+ str(env.observation_space))
 

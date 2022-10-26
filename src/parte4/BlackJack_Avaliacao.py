@@ -1,6 +1,8 @@
 import gym
 import numpy as np
 from QLearning_BlackJack import QLearning
+import warnings
+warnings.simplefilter("ignore")
 
 
 env = gym.make('Blackjack-v1').env
@@ -25,4 +27,6 @@ for _ in range(100):
     elif reward == -1:
         derrotas += 1
 
-print(vitorias, empates, derrotas)
+print(f'Vitórias = {vitorias}')
+print(f'Empates  = {empates}')
+print(f'Derrotas = {derrotas}')

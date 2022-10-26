@@ -1,10 +1,16 @@
 # Atividades parte 2
 
+Ainda considerando o exemplo a implementação do `TaxiDriver`, responda as perguntas abaixo.
+
+## Manipulando $\alpha$ e $\gamma$
+
 * Se $\alpha$ for um valor muito próximo de zero? Explique o comportamento encontrado.
 
 * Se $\gamma$ for zero? Explique o comportamento encontrado. 
 
-* O que acontece se a escolha das ações em cada estado for sempre aleatória? Ou seja, se a função `select_action` ao invés de ser definida como abaixo:
+## Considerando uma escolha de ação sempre aletatória
+
+O que acontece se a escolha das ações em cada estado for sempre aleatória? Ou seja, se a função `select_action` ao invés de ser definida como abaixo:
 
 ````python
 def select_action(self, state):
@@ -21,13 +27,15 @@ def select_action(self, state):
     return self.env.action_space.sample() # Explore action space
 ````
 
-Outra forma seria configurar `epsilon=1` e `epsilon_min=1`. Explique o comportamento encontrado. 
+Qual o comportamento do agente? 
 
-* O que acontece se a escolha das ações em cada estado for sempre buscando a melhor ação? Ou seja:
+## Considerando um agente que nunca explora novas ações
+
+O que acontece se a escolha das ações em cada estado for sempre buscando a melhor ação? Ou seja:
 
 ````python
 def select_action(self, state):
     return np.argmax(self.q_table[state]) # Exploit learned values
-````
+```` 
 
-Explique o comportamento encontrado em ambos os casos quando executamos `TaxiDriverGym.py`. 
+Para responder as questões acima utilize as implementações do `TaxiDriverGym.py` e `QLearning.py` que estão neste diretório. 
