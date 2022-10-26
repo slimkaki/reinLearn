@@ -28,3 +28,8 @@ pip install -r requirements_parte4.txt
 * Depois de instalada a biblioteca `kaggle_environments`, execute o notebook jupyter `tictactoe_env.ipynb` e entenda o que está acontecendo. 
 
 * O arquivo `tictactoe_train.py` apresenta uma estrutura básica para o loop de aprendizado de um agente. Que modificações são necessárias neste arquivo para fazer com que um agente aprenda a jogar *tictactoe* usando aprendizagem por reforço? 
+
+### Referência sobre a biblioteca do kaggle para reinforcement learning
+
+1. Link para o repositório no github: [https://github.com/Kaggle/kaggle-environments](https://github.com/Kaggle/kaggle-environments).
+1. Tutorial no Kaggle: [https://www.kaggle.com/code/tarunbisht11/get-started-with-kaggle-environment](https://www.kaggle.com/code/tarunbisht11/get-started-with-kaggle-environment).
