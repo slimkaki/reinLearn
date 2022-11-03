@@ -1,5 +1,4 @@
 import numpy as np
-import gym
 import random
 from numpy import savetxt
 import sys
@@ -32,14 +31,14 @@ class QLearning:
     def train(self, filename, plotFile):
         actions_per_episode = []
         for i in range(1, self.episodes+1):
-            state = self.env.reset()
+            (state, _) = self.env.reset()
             reward = 0
-            done = False
+            terminated = False
             actions = 0
 
-            while not done:
+            while not terminated:
                 action = self.select_action(state)
-                next_state, reward, done, _ = self.env.step(action) 
+                next_state, reward, terminated , done, _ = self.env.step(action) 
         
                 # Adjust Q value for current state
                 old_value = self.q_table[state, action]

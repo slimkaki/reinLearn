@@ -1,5 +1,4 @@
 import numpy as np
-import gym
 import random
 from numpy import savetxt
 import sys
@@ -33,12 +32,12 @@ class QLearning:
         for i in range(1, self.episodes+1):
             state = self.env.reset()
             reward = 0
-            done = False
+            terminated = False
             actions = 0
 
-            while not done:
+            while not terminated:
                 action = self.select_action(state)
-                next_state, reward, done, _ = self.env.step(action) 
+                next_state, reward, terminated, done, _ = self.env.step(action) 
         
                 # Adjust Q value for current state
                 old_value = 0 #pegar o valor na q-table para a combinacao action e state

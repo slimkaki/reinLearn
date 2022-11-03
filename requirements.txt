@@ -1,9 +1,9 @@
 pytest
-gym
+
 pygame
 networkx
 termcolor
-IPython
+
 matplotlib
 Box2D
 jupyterlab

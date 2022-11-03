@@ -1,32 +1,32 @@
 import random
 from IPython.display import clear_output
-import gym
+import gymnasium as gym
 import numpy as np
 from QLearning import QLearning
 from numpy import loadtxt
 
-env = gym.make("Taxi-v3").env
+env = gym.make("Taxi-v3", render_mode='ansi').env
 
 # only execute the following lines if you want to create a new q-table
-qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsilon_dec=0.99, episodes=100000)
-q_table = qlearn.train('data/q-table-taxi-driver.csv', 'results/actions_taxidriver')
-# q_table = loadtxt('data/q-table-taxi-driver.csv', delimiter=',')
+#qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsilon_dec=0.99, episodes=100000)
+#q_table = qlearn.train('data/q-table-taxi-driver.csv', 'results/actions_taxidriver')
+q_table = loadtxt('data/q-table-taxi-driver.csv', delimiter=',')
 
-state = env.reset()
+(state, _) = env.reset()
 epochs, penalties, reward = 0, 0, 0
 done = False
 frames = [] # for animation
     
 while not done:
     action = np.argmax(q_table[state])
-    state, reward, done, info = env.step(action)
+    state, reward, done, t, info = env.step(action)
 
     if reward == -10:
         penalties += 1
 
     # Put each rendered frame into dict for animation
     frames.append({
-        'frame': env.render(mode='ansi'),
+        'frame': env.render(),
         'state': state,
         'action': action,
         'reward': reward
