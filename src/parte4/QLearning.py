@@ -28,12 +28,12 @@ class QLearning:
         rewards = 0
 
         for i in range(1, self.episodes+1):
-            state = self.env.reset()
+            (state, _) = self.env.reset()
             done = False
 
             while not done:
                 action = self.select_action(state)
-                next_state, reward, done, _ = self.env.step(action) 
+                next_state, reward, done, _, _ = self.env.step(action) 
         
                 # Adjust Q value for current state
                 old_value = self.q_table[state, action]

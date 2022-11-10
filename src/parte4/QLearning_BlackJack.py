@@ -1,7 +1,6 @@
 import numpy as np
 import random
 from numpy import savetxt
-import sys
 import matplotlib.pyplot as plt
 
 #
@@ -32,13 +31,13 @@ class QLearning:
         rewards_per_episode = []
         rewards = 0
         for i in range(1, self.episodes+1):
-            state = self.env.reset()
+            (state, _) = self.env.reset()
             done = False
 
             while not done:
                 n_state = QLearning.stateNumber(state)
                 action = self.select_action(n_state)
-                next_state, reward, done, _ = self.env.step(action) 
+                next_state, reward, done, _, _ = self.env.step(action) 
                 n_next_state = QLearning.stateNumber(next_state)
 
                 # Adjust Q value for current state

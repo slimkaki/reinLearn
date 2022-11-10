@@ -1,3 +1,7 @@
-gym
+gymnasium
+IPython
+matplotlib
 kaggle_environments
-
+ipykernel
+vec_noise
+pettingzoo

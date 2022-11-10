@@ -14,23 +14,26 @@
 #   se o jogador estah segurando um Ás ou nao)
 #
 
-import gym
+import gymnasium as gym
 import warnings
 warnings.simplefilter("ignore")
 
-env = gym.make("Blackjack-v1", render_mode='human')
+env = gym.make("Blackjack-v1", render_mode='ansi')
 print('Actions: '+ str(env.action_space))
 print('Spaces: '+ str(env.observation_space))
 
 print('\n')
 print('Inicializando o jogo...')
 state = env.reset()
-print(state)
+print(f'Soma das cartas do meu jogador: {state[0][0]}')
+print(f'Carta que o dealer está mostrando: {state[0][1]}')
+print(f'O meu jogador tem um Ás? {state[0][2]}')
+
 done = False
 
 while not done:
     action = int(input("Pedir por mais cartas (1) ou parar (0)? "))
-    state, reward, done, info = env.step(action)
+    state, reward, done, truncated, info = env.step(action)
     print(f'Soma das cartas do meu jogador: {state[0]}')
     print(f'Carta que o dealer está mostrando: {state[1]}')
     print(f'O meu jogador tem um Ás? {state[2]}')
